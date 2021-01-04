@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btnadd = document.getElementById('btnadd');
+            // subscribe to the event 
+            btnadd.addEventListener('click', function(){
+                var n1 = document.getElementById('txtn1').value;
+                var n2 = document.getElementById('txtn2').value;
+                var res = parseFloat( n1) + parseFloat( n2);
+                document.getElementById('txtres').value = res;
+
+            }, false);
+              
+            var btnsubst = document.getElementById('btnsubst');
+            btnsubst.addEventListener('click', function(){
+                var n1 = document.getElementById('txtn1').value;
+                var n2 = document.getElementById('txtn2').value;
+                var res = parseFloat( n1) - parseFloat( n2);
+                document.getElementById('txtres').value = res;
+
+            }, false);
+            var btnmultiply = document.getElementById('btnmultiply');
+            btnmultiply.addEventListener('click', function(){
+                var n1 = document.getElementById('txtn1').value;
+                var n2 = document.getElementById('txtn2').value;
+                var res = parseFloat( n1) * parseFloat( n2);
+                document.getElementById('txtres').value = res;
+
+            }, false);
+
+            var btndivide = document.getElementById('btndivide');
+            btndivide.addEventListener('click', function(){
+                var n1 = document.getElementById('txtn1').value;
+                var n2 = document.getElementById('txtn2').value;
+                if(n2 == 0) {
+                  
+                    document.getElementById('txtres').value = 'Cannot devide by 0, please check value for denominator';
+                } else {
+                   
+                var res = parseFloat( n1) / parseFloat( n2);
+                document.getElementById('txtres').value = res;
+                }
+            }, false);
+        }
+    </script>
+</head>
+<body>
+    <h1>A Simple Calculator</h1>
+    <table style="border: double;">
+        <tbody>
+            <tr>
+                <td>
+                    Number 1
+                </td>
+                <td>
+                    <input type="number" id="txtn1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Number 2
+                </td>
+                <td>
+                    <input type="number" id="txtn2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Result
+                </td>
+                <td>
+                    <input type="text" id="txtres">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                   <input type="button" value="Add" id="btnadd">
+                </td>
+                <td>
+                    <input type="button" value="Subst" id="btnsubst">
+                </td>
+                <td>
+                    <input type="button" value="Multiply" id="btnmultiply">
+                 </td>
+                 <td>
+                     <input type="button" value="Devide" id="btndivide">
+                 </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

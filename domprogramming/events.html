@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+         #dv4 {
+             height: 200px;
+             width: 400px;
+             background-color: red;
+             color: yellow;
+         }
+    </style>
+    <script>
+        window.onload = function(){
+            document.getElementById('txtname').addEventListener('change', function(){
+                // the 'this' is sued to refer an element of whch scope is active
+                document.getElementById('dv1').innerHTML +=  this.value;
+            },false);
+
+            document.getElementById('txtname').addEventListener('keyup', function(){
+                // the 'this' is sued to refer an element of whch scope is active
+                document.getElementById('dv2').innerHTML += this.value;
+            },false);
+
+            document.getElementById('txtname').addEventListener('blur', function(){
+                // the 'this' is sued to refer an element of whch scope is active
+                document.getElementById('dv3').innerHTML += this.value;
+            },false);
+
+            document.getElementById('dv4').addEventListener('mouseenter', function(){
+                 
+                document.getElementById('dv4').innerHTML = 'The Mouse is Entered';
+            },false);
+            document.getElementById('dv4').addEventListener('mouseleave', function(){
+                 
+                document.getElementById('dv4').innerHTML = 'The Mouse is left';
+            },false);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txtname">
+    <hr>
+    <p>For Change Event</p>
+    <div id="dv1"></div>
+    <br>
+    <p>For KeyUp Event</p>
+    <div id="dv2"></div>
+    <br>
+    <p>For Blur Event</p>
+    <div id="dv3"></div>
+    <p>Mouse Move</p>
+    <div id="dv4">Please move mouse in the div</div>
+</body>
+</html>
