@@ -62,4 +62,12 @@
 5. Iterations
 6. Conditions
 7. Collections
-8. Evets
+8. Events
+
+
+
+Hands-on-Labs
+
+Day 1: Creat a Calcuator using JavaScript like Calculator Desktop application on Windows Machine.
+
+
