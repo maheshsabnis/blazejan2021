@@ -12,7 +12,9 @@
         declaration        
 
 2. Operators
-    + , - , *, / , >, < , >=, <=, !==, ==, ===
+    -  + , - , *, / , >, < , >=, <=, !==, ==, ===
+    - The '+' operator will change is behavior based on the operands
+    - if one of the operand is string, then the '+' will used for string concatination
 3. Objects
 4. Functions
 5. Iterations
