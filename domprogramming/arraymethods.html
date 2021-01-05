@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var heros = ["james bond", "indiana jones", "etan hunt", "jason bourn", "thor", "iron man"];
+            // basic itration JSDOM to ES 3
+            for(var c=0; c<heros.length;c++){
+                console.log(heros[c]);
+            } 
+
+            // itartion from the es3 to es5
+            for(var c in heros){
+                console.log(heros[c]);
+            }
+
+            // array methods
+            heros.push("spider man");
+            for(var c in heros){
+                console.log(heros[c]);
+            }
+            heros.pop();
+            for(var c in heros){
+                console.log(heros[c]);
+            }
+
+            // using shift () remove the first element from array
+            // shift other elements to the next lower index
+
+            heros.shift();
+            for(var c in heros){
+                console.log(heros[c]);
+            }
+
+            // using unshift(), add an element in array at beginning and adjust indexes again to higher values
+            heros.unshift("captain america")
+            for(var c in heros){
+                console.log(heros[c]);
+            }
+
+            // replace a value at specific index in array
+
+            heros[2] = "captain deep";
+            for(var c in heros){
+                console.log(heros[c]);
+            }
+
+            // append an element based on length
+            heros[heros.length] = "shaktiman";
+            for(var c in heros){
+                console.log(heros[c]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Array Methods</h1>
+</body>
+</html>

@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!--JavaScript Reference-->
-    <script src="./equality.js"></script>
+    <script src="./functionObject.js"></script>
+    <script src="./reffunctions.js"></script>
+    
+    <script>
+        window.onload = function(){
+            var lib = new libStringUtilities();
+            var str = 'JavaScript App Development';
+            console.log('Reverse of ' + str + ' == ' + lib.reverse(str)) ;
+            console.log(lib.changeCase(str, 'U'));
+            console.log(lib.changeCase(str, 'L'));
+            console.log('Length of ' + str + ' = ' + lib.getLength(str));
+
+          
+
+
+            var arrObj = new ArrayFrameworkObject();
+            var arr = [10,20,30,40,50,60];
+            arrObj.printData(arr);
+            console.log(arrObj.getTopValue(arr));
+            
+            // defining an instanc of instance key 
+            var instance = new arrObj.key();
+            // calling a public method using instance object
+            instance.f1();
+
+        }
+    </script>
 </head>
 <body>
-    
+    <script src="./iife.js"></script>
 </body>
 </html>
