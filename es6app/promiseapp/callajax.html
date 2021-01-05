@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./callajax.js"></script>
+    <script src="./post.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById('btn').addEventListener('click',
+                function() {
+                    var products;
+                    getData().then((resp) => {
+                        products = resp;
+                        console.log('in UI' + products);
+                    }).catch((err) => {
+                        console.log(err);
+                    });
+                    for (let i = 0; i < 100; i++) {
+                        console.log('Hay doing something else');
+                    }
+                }, false);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="get data" id="btn">
+</body>
+
+</html>

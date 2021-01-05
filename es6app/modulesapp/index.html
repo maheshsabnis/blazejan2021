@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./../node_modules/systemjs/dist/system.js"></script>
+</head>
+
+<body>
+    <script>
+        // Configure the SystemJS module loader
+        SystemJS.config({
+            // Tell it that our javascript files are in the /js folder
+            baseURL: 'modulesapp',
+            // Tell it to apply Babel to our JS files
+            transpiler: 'plugin-babel',
+            // Configure the Babel plugin - it's basically just telling it where to read the files from - in our case, they're in node_modules
+            map: {
+                'plugin-babel': './../node_modules/systemjs-plugin-babel/plugin-babel.js',
+                'systemjs-babel-build': './../node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'
+            },
+        });
+
+        // Now that the configuration is complete, we can include our main file! (/js/main.js)
+        SystemJS.import('./importcode.js');
+    </script>
+
+    <h1>DEMO for SystemJS module Loader</h1>
+
+</body>
+
+</html>
