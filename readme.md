@@ -97,6 +97,203 @@
 8. Events
     -  they are the UX for end-use so that the data can be accepted and will be delivered to end-user based on actions
 
+==============================================================================================================================================
+
+# ES 6 / High-Level JAVASCRIPT
+
+Prerequisites
+Node.js installed
+    - https://www.nodejs.org
+    - Install Node.js runtime for Server-Side JavaScript
+    - Install the 'npm' utility, Node-Package-Manager
+Visual Studio Code aka VSCode
+    - https://code.visualstudio.com
+
+
+1. Project Configuration
+- The pcakage.json file
+    - The configuration file for JavaScript based apps to create and manage project dependencies
+    - the 'npm init -y' commans to create package.json
+    - The 'dependencies' section
+        - List of packages used for the running/execution of the application
+        - npm install --save <PACKAGE-NAME>
+    - The 'devDependencies' section
+        - List of packages used only duriung development and testing of the application
+        - npm install --save-dev <PACKAGE-NAME>
+    - The 'scripts' section
+        - Contains commands for following purposes
+            - Execute / run -- start , the command is 'npm run start'
+            - Build -- build, the command is 'npm run build'
+            - Test  --  test, the command is 'npm run test'       
+2. Using the dependencies for ES 6 Application Development         
+    - Babel CLI, the command line interface for the Transpiling the ES 6 into ES 3
+        - install the Babel-CLI on machine scope so that we can used it ftom command prompt
+            - npm install -g @bable/cli (Windoes machine)
+            - sudo npm install -g @babel/cli (MAC / LINUX)
+        - Installing the package for the current project 
+             - npm install --save-dev @babel/cli
+    - Babel Core
+        - Provides the core transpilation features
+            - npm install -g @bable/core
+            - npm install --save-dev @babel/core         
+    "@babel/preset-env": "^7.12.11",
+        - Bridge between the ES 6 High-level functionalities to execute them as it is in browser
+    "@babel/preset-es2015": "^7.0.0-beta.53"        
+
+3. ES 6 programming
+    - Defining the Scope for a variable using 'let' keyword
+        - This provided the BLOCK-SCOPE declaration for the variable
+    - The String Interpolation aka Template String
+        - New Syntax for Building an Immutable String Object by injecting the String variables as expressions
+        - Syntax
+            - `${<STRING-PROPERTY-1>} ${STRING-PROPERTY-2}....`    
+        - Advantages
+            - Creaing multi-line string object
+            - Creating HTML String template
+    - Iterators
+        - symbol.iterator
+            - an objet that is used to read elements from collections using iterations
+        - for..of loop provided in ES 6      
+    - Defining Constants
+        - Using 'const' keyword
+        - e.g. const val = 100;
+        - const must be initialized          
+
+
+# Array Method Demos
+
+let values = ["Mahesh", "Suprotim", "Vikram", "Subodh", "Sumit", "Pankaj", "Saket", "Manish", "Abhijit", "Kumarmangalam"];
+
+values.forEach((v,i)=>{
+    if(v.length > 6){
+        console.log(v);
+    }
+});
+// return an array having length greater than
+let res = values.filter((v,i)=>{
+    return v.length > 6;
+});
+console.log(JSON.stringify(res));
+
+console.log(JSON.stringify(values.sort()));
+
+let sortByLengt = values.sort((v1,v2)=>{
+    return v1.length - v2.length;
+});
+
+console.log(JSON.stringify(sortByLengt));
+
+
+ sortByLengt = values.sort((v1,v2)=>{
+    return v2.length - v1.length;
+});
+
+console.log(JSON.stringify(sortByLengt));
+
+
+console.log(JSON.stringify(values.reverse()));
+
+// using find 
+// return the first match element based on condition and return it
+// chrome,Edge, Firefox, Safari, opera
+let findRes = values.find((v)=> {
+    return v.length > 6;
+});
+
+console.log(findRes);
+
+
+let values = ["Mahesh", "Suprotim", "Vikram", "Subodh", "Sumit", "Pankaj", "Saket", "Manish"];
+
+
+// explict function
+
+function printValeus(v,i){
+    console.log(`Value at ${i}th position = ${v}`);
+}
+
+// pasing the explicitely defined callback function
+values.forEach(printValeus);
+console.log();
+console.log('Passing Callback');
+
+values.forEach(function(v,i){
+    console.log(`Value at ${i}th position = ${v}`);
+});
+
+console.log();
+console.log('ES 6 Arrow Operators');
+// Arrow
+// the callback is executed once for each element in array
+// this does not return anything, instead just process an element
+values.forEach((v,i)=> {
+    console.log(`Value at ${i}th position = ${v}`);
+});
+
+console.log();
+console.log('ES 6 map() like forEach added in ES 6 to read values as key value pair');
+// for every element its creates a new array with the result returned by calling 
+//  callback function for each element
+values.map((v,i)=> {
+    console.log(`Value at ${i}th position = ${v}`);
+});
+
+
+let myarr = [1,2,3,4,5];
+
+myarr.forEach((n,idx)=> {
+    // modifying an array inside the foreach by multiplying each element by 2
+   return myarr[idx] = n *2;
+});
+
+console.log(`Doubled Output array ${JSON.stringify(myarr)}`);
+
+let res = myarr.map((n,idx)=>{
+    return n * 2;
+});
+console.log(`Doubled Output array ${JSON.stringify(res)}`);
+
+let values = ["Mahesh", "Suprotim", "Vikram", "Subodh", "Sumit", "Pankaj", "Saket", "Manish"];
+
+
+// explict function
+
+function printValeus(v,i){
+    console.log(`Value at ${i}th position = ${v}`);
+}
+
+// pasing the explicitely defined callback function
+values.forEach(printValeus);
+console.log();
+console.log('Passing Callback');
+
+values.forEach(function(v,i){
+    console.log(`Value at ${i}th position = ${v}`);
+});
+
+console.log();
+console.log('ES 6 Arrow Operators');
+// Arrow
+// the callback is executed once for each element in array
+// this does not return anything, instead just process an element
+values.forEach((v,i)=> {
+    console.log(`Value at ${i}th position = ${v}`);
+});
+
+console.log();
+console.log('ES 6 map() like forEach added in ES 6 to read values as key value pair');
+// for every element its creates a new array with the result returned by calling 
+//  callback function for each element
+values.map((v,i)=> {
+    console.log(`Value at ${i}th position = ${v}`);
+});
+
+
+
+
+
+
+
 
 
 # Hands-on-Labs
