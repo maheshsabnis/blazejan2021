@@ -142,8 +142,8 @@ Visual Studio Code aka VSCode
 
 # Babel Transpilation
 
-babel <SOURCE-FIL>.js  <TARGET-FILE>.js
-babel fileSource.js  fileTarget.js
+babel <SOURCE-FIL>.js  -o <TARGET-FILE>.js
+babel fileSource.js  -o fileTarget.js
 
 
 

@@ -9,6 +9,9 @@ products.set(6, {id:106, name:'Lays', category:'FOD', price:30}); // overwritten
 products.set(6, {id:107, name:'Rice', category:'FOD', price:80}); // overwritten
 products.set(6, {id:108, name:'Grains', category:'FOD', price:80}); // read
 
+ 
+
+
 //  products.entries() will iterate over the Map and return each entry from it
 for(let prd of products.entries()){
    //console.log(prd); // prd is array prd[0] is key and prd[1] is JSON object
