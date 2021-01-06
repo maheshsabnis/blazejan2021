@@ -140,6 +140,13 @@ Visual Studio Code aka VSCode
         - Bridge between the ES 6 High-level functionalities to execute them as it is in browser
     "@babel/preset-es2015": "^7.0.0-beta.53"        
 
+# Babel Transpilation
+
+babel <SOURCE-FIL>.js  <TARGET-FILE>.js
+babel fileSource.js  fileTarget.js
+
+
+
 3. ES 6 programming
     - Defining the Scope for a variable using 'let' keyword
         - This provided the BLOCK-SCOPE declaration for the variable
@@ -306,9 +313,52 @@ values.map((v,i)=> {
 
 
 
+# using rest parameters
+- approach of pasing variable number of parameters to a method
+- Syntax
+    - function print(...arr){}
+        - ... is a 'spread' operataor, used to build a immutable object to create a single array with varibale length 
+
+    - print(1); print(1,2), print(1,2,3,,,,,,)
+        - creates an 'argument' array, that create a 'immutable' array object
+            - [...arguments, 1,2,3,4,,,,,,,,]
 
 
+# New Collections
+- Set
+    - set of values with no duplicate records
+    - Nop indexing for the records 
+    - Methods and properties
+        - add(value: T): this;
+            - Add new entry
+        - clear(): void;
+            - Delete values or clear the set
+        - delete(value: T): boolean;
+            - delete a specific value
+        - forEach(callbackfn: (value: T, value2: T, set: Set<T>) => void, thisArg?: any): void;
+            - Iterartion
+        - has(value: T): boolean;
+            - check if the value is present
+        - readonly size: number;
+            - return size or number of records in set
 
+- Map
+    - USed to store data in Key/Value pair
+    - Generally 'key' is string/numeric and value is object
+    - clear(): void;
+        - delete all records from map
+    - delete(key: K): boolean;
+        - delete a recod based on specific key
+    - forEach(callbackfn: (value: V, key: K, map: Map<K, V>) => void, thisArg?: any): void;
+        - Iteration
+    - get(key: K): V | undefined;
+        - read a value based on key
+    - has(key: K): boolean;
+        - check if a specific key is available 
+    - set(key: K, value: V): this;
+        - Add a new record in map
+    - readonly size: number;
+        - size of map
 
 
 
@@ -347,4 +397,14 @@ Write a JavaScript reference function with following operations on the string
 
 
 Generalize the Table HEader and Rows creation for product table
+
+
+Day 3:
+
+Create a map with Products Infromation based on Id, Name, Category, Price, Manufacturer. Create a HTML Table from the Map. The table should show all records from Map. Use Tamplate string to generate Rows and Heades for the table.
+
+1. Add a Input Text element and Select element above the Table. The select element must show the properties of the Product object. When the user select a specific property from the select and enter the value for the property in Textbox (input element), the table should show data based on data entered in input element. E.g. If the 'Category' is selected from select element and the value entered in input element is 'ECT', then the table shoud how only recodrs for ECT category. (Immediately)
+
+2. Add two radio buttons beside the input element for SORT and REVERSE. Based on the property selected from the select element the table should be sorted or reversed when corresponding radiobutton is clicked.
+e.g. is property selectd from select element is ProductName and sort radio button is clicked then table should show all products sorted by ProductName (at most tomorrow)
 
