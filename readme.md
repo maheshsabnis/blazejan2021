@@ -162,6 +162,8 @@ Visual Studio Code aka VSCode
 
 # Array Method Demos
 
+
+
 let values = ["Mahesh", "Suprotim", "Vikram", "Subodh", "Sumit", "Pankaj", "Saket", "Manish", "Abhijit", "Kumarmangalam"];
 
 values.forEach((v,i)=>{
@@ -169,10 +171,13 @@ values.forEach((v,i)=>{
         console.log(v);
     }
 });
+
 // return an array having length greater than
+
 let res = values.filter((v,i)=>{
     return v.length > 6;
 });
+
 console.log(JSON.stringify(res));
 
 console.log(JSON.stringify(values.sort()));
@@ -196,6 +201,7 @@ console.log(JSON.stringify(values.reverse()));
 // using find 
 // return the first match element based on condition and return it
 // chrome,Edge, Firefox, Safari, opera
+
 let findRes = values.find((v)=> {
     return v.length > 6;
 });
@@ -222,18 +228,23 @@ values.forEach(function(v,i){
 });
 
 console.log();
+
 console.log('ES 6 Arrow Operators');
+
 // Arrow
 // the callback is executed once for each element in array
 // this does not return anything, instead just process an element
+
 values.forEach((v,i)=> {
     console.log(`Value at ${i}th position = ${v}`);
 });
 
 console.log();
 console.log('ES 6 map() like forEach added in ES 6 to read values as key value pair');
+
 // for every element its creates a new array with the result returned by calling 
 //  callback function for each element
+
 values.map((v,i)=> {
     console.log(`Value at ${i}th position = ${v}`);
 });
@@ -263,6 +274,7 @@ function printValeus(v,i){
 }
 
 // pasing the explicitely defined callback function
+
 values.forEach(printValeus);
 console.log();
 console.log('Passing Callback');
@@ -273,16 +285,20 @@ values.forEach(function(v,i){
 
 console.log();
 console.log('ES 6 Arrow Operators');
+
 // Arrow
 // the callback is executed once for each element in array
 // this does not return anything, instead just process an element
+
 values.forEach((v,i)=> {
     console.log(`Value at ${i}th position = ${v}`);
 });
 
 console.log();
 console.log('ES 6 map() like forEach added in ES 6 to read values as key value pair');
+
 // for every element its creates a new array with the result returned by calling 
+
 //  callback function for each element
 values.map((v,i)=> {
     console.log(`Value at ${i}th position = ${v}`);
