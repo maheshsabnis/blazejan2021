@@ -1,4 +1,8 @@
 function ArrayFrameworkObject(){
+
+    
+
+
     // f1 is public to 'myobj'
     var myobj = function(){
           this.f1 = function(){

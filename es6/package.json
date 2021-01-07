@@ -4,7 +4,8 @@
   "description": "The ES 6 Application Features",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel oops/observations.js -o build/observations.build.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,8 @@
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-private-methods": "^7.12.1",
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@babel/plugin-transform-modules-systemjs": "^7.12.1",
     "@babel/plugin-transform-regenerator": "^7.12.1",

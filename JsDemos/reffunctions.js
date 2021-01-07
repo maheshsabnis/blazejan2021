@@ -3,6 +3,10 @@
 // this --> The Self-Reference Aliase of the object (HTMLElement, Ref. Function, etc)
 var libStringUtilities = function(){
 
+
+    // constructor
+    function libStringUtilities(){}
+
     this.reverse = function(str){
         display();
         var result ='';
