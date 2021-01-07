@@ -499,8 +499,15 @@ Day 4:
         - GetAllEmployees(condition)
             - Condition could be as follows
                 - DeptName
+                    - Returns all Employees by DeptName
                 - Location
+                    - Returns all Employees of a location
                 - Designation
+                    - Returns all Employees having a specific designation
                 - EmpName
+                    - Return All Employees having Same EmpName
+                - DeptName and Designation
+                    - Return all Employees of specifc Department having specific Designation    
+         - Wriate a method to Return All Employees Having Max Salary Per Department            
 
 
