@@ -417,6 +417,60 @@ values.map((v,i)=> {
     ]
 }
 
+https://apiapptrainingnewapp.azurewebsites.net/api/Products
+
+# Promises
+    - The Server generates an Acknowledgemenent (PROMISE) the client subscribe to the promise
+    - The client is free to perorm other operations
+    - When the server is ready it generates response to client through notification
+        - Success
+        - Fail
+    - The client performs operations based on the response
+        - Resolve for Success and complete operation
+        - Reject for Fail and log the failure operation and complete
+    - Used in JavaScript in following scenarios
+        - The Operations which are not bound to time based execution
+        - Calls to any external resources
+            - Socket Calls for REAL-TIME Apps
+            - HTTP Calls to REST APIs
+                - HTTP Status codes
+                    - OK --> 200
+                    - CREATED --> 201
+                    - UNAUTHORIZED --> 401
+                    - INTERNER SREVER ERROR --> 500
+                    - NOT FOUND --> 404
+                - AJAX Calls
+                    - XmlHttpRequest object
+                        - ES Standard for AJAX Calls
+                        - Default Async Behavior
+                        - Methods
+                            - open()
+                                - Initite the request to external service over HTTP
+                                    - method: GET / POST/ PUT / DELETE
+                                    - url: the http url
+                                    - username & password
+                            - send()
+                                - make request and wait for date from server for GET request
+                                - send(data), used in case of POST and PUT request
+                            - setRequestHeader()
+                                - Pass the header information
+                                    - POST and PUT
+                                        - pass the 'Content-Type', the data format to be posted to the server
+                                    - If the Security is used
+                                        - AUTHORIZATION                          
+            - Download and Upload Operations
+        - Processing high volume data 
+            - Sorting and reversing collections
+            - search records from collections
+    - The 'Promise' object
+        - The Resolve and Reject Callbacks
+        - Async keyword is async
+        - Await keyword is await                     
+
+# Itretors
+# Generators
+# Proxy
+# Destructuring
 
 
 
