@@ -457,7 +457,12 @@ https://apiapptrainingnewapp.azurewebsites.net/api/Products
                                     - POST and PUT
                                         - pass the 'Content-Type', the data format to be posted to the server
                                     - If the Security is used
-                                        - AUTHORIZATION                          
+                                        - AUTHORIZATION       
+                    - Pure ES 6 AJAX Object
+                        - The 'fetch()' object
+                            - returns Promse out-of-the-box   
+                    - ES 6 Promise Libraries
+                        - 'Q', 'Bulebird', axios                                            
             - Download and Upload Operations
         - Processing high volume data 
             - Sorting and reversing collections
@@ -468,7 +473,35 @@ https://apiapptrainingnewapp.azurewebsites.net/api/Products
         - Await keyword is await                     
 
 # Itretors
+    - Used to perform the data read operations from collections or range based data structures
+        - collections
+            - Array, Set, Map 
+        - for..of 
+        - range based data structures
+            - custom collections declared as per need in JavaScript Code     
+
+let arr = []; -> 0
+arr.push(10); --> 1 
+
+for(let i=0;i<arr.length;i++>){.....}
+
+for(let i of arr){......}
+
+sysmbol.iterator(arr); start from 0 and advance to next till end of collection is not arrived
+    - current, return the current result
+    - if(next) {next}, advance to next entry in collection
+0,1,2....infinity
+
+
 # Generators
+    - Mechanism to simplify the iterators
+    - function contains iteration logic using for..loop or for..of loop
+    - can be easily generilized for any data type
+    - It 'yield' (read and return) the record on current index and advance itself (move to the next record) 
+    - the 'next()' function is available by default 
+    - defined usig 'function*' syntax
+        - function* myFunction(){.......}, myFunction() is geerator
+    - used in SAGA extensively, the library for managing ajax calls uin react-redux apps    
 # Proxy
 # Destructuring
 
