@@ -503,6 +503,11 @@ sysmbol.iterator(arr); start from 0 and advance to next till end of collection i
         - function* myFunction(){.......}, myFunction() is geerator
     - used in SAGA extensively, the library for managing ajax calls uin react-redux apps    
 # Proxy
+    - The 'Proxy()' object in ES 6
+        - have rules to read and write data to and from the original object
+    - const pxy = new Proxy(target, handler);
+    - handler is the interceptor that intercepts incommin requests from the client
+    - target is the original object to be proxied of which data/properties will be delivered to client using taregt    
 # Destructuring
 
 
@@ -596,5 +601,17 @@ Day 4:
                 - DeptName and Designation
                     - Return all Employees of specifc Department having specific Designation    
          - Wriate a method to Return All Employees Having Max Salary Per Department            
+
+
+Day 5:
+
+Create a HTML Page that will use XMLHttprequest object for performing AJAX Calls GET /POST/ PUT /DELETE
+
+Peroform following operations on the Product object having following Key
+
+ProductRowId, ProductId, ProductName, Description, Manufacturer, BasePrice
+
+CReate a Proxy object that will Proxy for Product Object for making sure that, the 
+ProductId should be passed as string, BasePrice as Number, the ProductName has length less than 30
 
 

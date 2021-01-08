@@ -24,12 +24,12 @@ function cutomRangeIterator(startIndex=0, endIndex = Infinity, step=1){
                 output = {value: nextIndex, index:count ,done:false};
                 nextIndex += step; // advance to next
                 count++; // increament the count for output collection generated
-                return output;
+                return output; // current record
             }
-            return {value: nextIndex, index:count, done:true};
+            return {value: nextIndex, index:count, done:true}; // return the final collection 
         }
     };
-    return rangeReaderIterator;
+    return rangeReaderIterator; // final output 
 }
 // the customIterator is a custom collection having
 // startIndex = 1, endIndex = 20, step 1 
