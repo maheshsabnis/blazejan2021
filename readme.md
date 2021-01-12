@@ -614,4 +614,80 @@ ProductRowId, ProductId, ProductName, Description, Manufacturer, BasePrice
 CReate a Proxy object that will Proxy for Product Object for making sure that, the 
 ProductId should be passed as string, BasePrice as Number, the ProductName has length less than 30
 
-================================================================================================================================================================================
+=====================================================================================================================================================================================
+
+# Node.js
+
+1. Understanding Node.js Fundamentals
+    - Architectures
+        - Do not need explicit threding logic , but if the request need an async exdecution the Node.js will execute the code in different thread by managing threading internally and hence the code becomes easy to maintain and manage.
+        - Actually Node.js runtime has 'only-one' thraed for all concurrent requests. 
+    - Node Conding and Execution
+    - Installing the Node.js
+        - https://www.nodejs.org
+            - node command prompt
+            - npm for installing packages
+        - Node.js intellisense
+            - @types/node
+                - This package contains all node.js type definitions for intellisense     
+2. Using Node.js Standard Modules
+    - JavaScript Code File is executed inside the Node.js Environment using
+        - node <File-NAME>.js
+    - Concept of Modules
+        - The Node.js Hosting Env. will load the Code
+            - internal/modules/cjs/loader.js
+                - Internall uses File System (fs) module to load the file  in the Env.
+                - Each Source Code File is accepted as a Module for Execution  
+        - The Code will be verified
+            - For Checking the Syntax Error 
+        - The Node.js Runtime will monitor the code for execution
+            - IO Blocking, Async Code
+            - Non-IO Blocking, Sync code
+        - Execute the code and generate result on server    
+        - To re-load the update module in the Node.js env. using 'nodemon' package
+            - Node Monitor that will monitor the File Changes and if the file is change, it will be refreshed in the Node.js runtime
+                - npm install -g nodemon  
+    - Standard Modules
+        - http
+            - The Build the Web Server using Node.js
+            - The 'http' module
+                - help to create Http Server using 'createServer()' method
+                    - accepts HttpRequestListener
+                        - Http Request
+                            - url
+                            - method
+                            - data
+                        - Http Response
+                            - write(), write response
+                            - writeHead()
+                            - end()
+                - the createSrever() method provides the object that has the 'listen()' method tom listen requests on specific port                     
+        - fs
+        - path
+    - Creating Custom Modules
+3. Web Application Development using Node.js
+    - Static and Dynamic Files
+    - Express.js
+    - Creating Web App using Express.js
+    - REST APIs using Express.js
+    - Session Management
+    - Indentity Management
+        - Authentication
+        - Token based security
+4.  Using Object Relational Mapping (ORM) using Node.js and Sequlize
+    - Database Access
+    - Performing CRUD Operations
+    - Generating JavaScript Models from Database Tables
+    - MySQL Stored Procs      
+5. Accessing External REST APIs in Node.js Apps
+    - Server Side Promise Libraries
+6. Accessing NoSQL DynamoDB in Node.js REST APIs
+
+
+
+Day 7: Node.js
+
+1. Create a HTTP Srever, that will respond the Products Information as
+ProductId, ProductName, CategoryName, Price
+2. The HTTP Server must have capacility to create ba new record in Products and return the newly created record. Generate ProductId as AUTO_GENERATED key on HTTP Server.
+3. Accept the data for search from the client (POSTMAN / Advanced REST CLIENT (ARC)) and return the Products info  based on search criteria. (pass this criteria either through Body else thriugh header)

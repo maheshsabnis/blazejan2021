@@ -278,7 +278,10 @@ select (Salary * 0.02) as Tax from HouseKeepingStaff
     -- their names
  
 
-
+Select PatientName, DoctorName, Patients.PatientRowId, Doctors.DoctorRowId from
+Doctors, Patients, DoctorPatientIPD
+where Doctots.DoctorRowId = DoctorPatientIPD.DoctorRowId
+and Patients.PatientRowId = DoctorPatientIPD.PatientRowId
 
 
 
