@@ -669,6 +669,36 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
                 - If large file is processed and the code cannot block itself from performing other operations the use Async Read / Write
         - path
     - Creating Custom Modules
+        - A module is a set of re-usable functionalities
+        - Autonomous behavior having its logic to support other parts of the Node.js application
+            - Data Access, code for Database Operations
+            - Security, used to intercept HTTP requests and verify
+                - Authentication or Identity
+                - Json Web Tokens (JWT)
+            - Business Logic Workflow Modules
+                - Autonomous modules
+                    - Search Logic
+                    - Create New  / Update Existing Records
+                    - Domain Calculations    
+            - Web Application Module
+                - Accept HTTP Requests and Return HTML Pages / JavaScript / CSS
+                - Single Page / Multi-Page / Hybrid Application        
+            - REST APIs
+                - HTTP Endpoints
+                - Accepst HTTP GET/ POST/ PUT/ DELETE Requests
+                - JSON Data Communicaiton     
+        - Node.js Module Loader that is used to load and cache the custom modules
+            - ES 3 to ES 5
+                - file1.js with code, file1.js is Node.js Module
+                    -  module.export ={ ... functions...to..be..exported }; 
+                - Loading file1.js module in file2.js
+                    - let mymodule = required('file1.js');    
+            - ES 6+
+                - file.js
+                    - export class MyClass{.....}
+                - file2.js 
+                    - import {MyClass} from 'file1.js'         
+
 3. Web Application Development using Node.js
     - Static and Dynamic Files
     - Express.js
@@ -686,6 +716,13 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
 5. Accessing External REST APIs in Node.js Apps
     - Server Side Promise Libraries
 6. Accessing NoSQL DynamoDB in Node.js REST APIs
+7. Node.js Promise Object-Model
+    - The 'q' the Promise Library
+    - The 'Bluebird', the Promise Library
+    - Installing q
+        - npm install --save q
+   https://www.dotnetcurry.com/nodejs/1242/promises-nodejs-using-q-goodbye-callbacks
+   https://www.dotnetcurry.com/nodejs/1225/call-external-service-using-nodejs     
 
 
 
@@ -703,6 +740,9 @@ Create a Node.js Web Server, that will render the Products.html. This page will 
 UI for Accepting the product data, use the <form> tag and submit the form with the Product Information. Once this page is posted, recived the posted data and the data has to be added in the server in Products array.  Display this products array in the table back to the page.
 
 HINT: https://www.dotnetcurry.com/nodejs/1216/using-nodejs-process-post-data
+
+Create a Node.js app that will perform Async operations for Reading / Writing data to external service using 'Q' library 
+
 
 
 
