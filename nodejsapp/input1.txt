@@ -1,0 +1,2 @@
+This file will be read using fs (fileSystem) module of Node.js
+The fs uses libuv for accessing the file from Node env. to OS.

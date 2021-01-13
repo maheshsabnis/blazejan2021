@@ -1,0 +1,2 @@
+The file is written using Node.js 
+fs module synchronously. New data

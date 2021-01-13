@@ -663,6 +663,10 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
                             - end()
                 - the createSrever() method provides the object that has the 'listen()' method tom listen requests on specific port                     
         - fs
+            - read / write Synchornous and Asynchronus methods
+                - If the File Must be Responded to the request then use Sync read
+                - If the File contents are written completed before processing the file the use Sync write
+                - If large file is processed and the code cannot block itself from performing other operations the use Async Read / Write
         - path
     - Creating Custom Modules
 3. Web Application Development using Node.js
@@ -691,3 +695,14 @@ Day 7: Node.js
 ProductId, ProductName, CategoryName, Price
 2. The HTTP Server must have capacility to create ba new record in Products and return the newly created record. Generate ProductId as AUTO_GENERATED key on HTTP Server.
 3. Accept the data for search from the client (POSTMAN / Advanced REST CLIENT (ARC)) and return the Products info  based on search criteria. (pass this criteria either through Body else thriugh header)
+
+
+Day 8: 
+
+Create a Node.js Web Server, that will render the Products.html. This page will have
+UI for Accepting the product data, use the <form> tag and submit the form with the Product Information. Once this page is posted, recived the posted data and the data has to be added in the server in Products array.  Display this products array in the table back to the page.
+
+HINT: https://www.dotnetcurry.com/nodejs/1216/using-nodejs-process-post-data
+
+
+

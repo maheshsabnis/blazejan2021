@@ -35,6 +35,7 @@ let server =  http.createServer((req,resp)=>{
 
     if(req.method === "POST"){
         let receivedData;
+        req.setEncoding('utf-8');
         req.on('data', (d)=> {
             // process the data
             // with you logic`
@@ -70,6 +71,7 @@ let server =  http.createServer((req,resp)=>{
         });
         
         resp.write(JSON.stringify(output));
+    
     } else {
         resp.write(JSON.stringify(Emps));
     }
