@@ -23,6 +23,8 @@ Once this command is executed successfully, the 'models' project is added in to 
 
 Step 6: In the project add a new file and name this file as 'service.js'. In this file add the following code. This code using Express.js object model to create REST APIs.
 
+````javascript
+
 // @ts-nocheck
 
 // 1. Load packages 
@@ -160,9 +162,4 @@ instance.delete('/api/departments/:id', (req, resp) => {
 instance.listen(6060, () => {
     console.log('Express Server Started on port 5060');
 });
-
-
-
-
-
-
+````
