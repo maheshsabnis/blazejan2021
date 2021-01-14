@@ -24,7 +24,9 @@ Once this command is executed successfully, the 'models' project is added in to 
 Step 6: In the project add a new file and name this file as 'service.js'. In this file add the following code. This code using Express.js object model to create REST APIs.
 
 // @ts-nocheck
+
 // 1. Load packages 
+
 const express = require('express');
 const bodyParser =  require('body-parser');
 const cors = require('cors');
@@ -52,8 +54,7 @@ const sequelize = new Sequelize("Company", "root", "P@ssw0rd_", {
 
 // 3. lets import packages
 
-// let dept = sequelize.import('./models/Department.js');
-
+ 
 const dept = require(path.join(__dirname, './models/Department'))(sequelize, Sequelize.DataTypes);
 
 
