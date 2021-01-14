@@ -54,6 +54,28 @@ const sequelize = new Sequelize("Company", "root", "P@ssw0rd_", {
     }
 });
 
+ 
+async function getDepartments(){
+     
+        let r = await sequelize.query('CALL getEmployees("Manager");');
+        console.log(`Result in Methos ${JSON.stringify(r)}`);
+        return r;
+} 
+getDepartments().then((r)=>{console.log(JSON.stringify(r));}).catch((e)=>{
+    console.log(`error ${e}`);
+});
+
+
+async function insertDepartent(){
+    let r = await sequelize.query("CALL sp_insertdept(80, 'Transport', 'Pune', 30);");
+        console.log(`Result in Methos ${JSON.stringify(r)}`);
+        return r;
+}
+insertDepartent().then((r)=>{console.log(JSON.stringify(r));}).catch((e)=>{
+    console.log(`error ${e}`);
+});
+
+
 // 3. lets import packages
 
  

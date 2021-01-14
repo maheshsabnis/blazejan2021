@@ -66,3 +66,34 @@ DELIMITER ;
 
 CALL getEmployees('Manager');
 
+
+
+DELIMITER $$
+
+CREATE PROCEDURE sp_insertdept(IN DeptNo int
+, IN DeptName VARCHAR(200)
+, IN Location VARCHAR(200)
+, IN Capacity int
+)
+BEGIN
+
+INSERT INTO Department (
+DeptNo
+, DeptName
+, Location
+, Capacity
+)
+
+    VALUES (DeptNo
+, DeptName
+, Location
+, Capacity);
+
+END$$
+# change the delimiter back to semicolon
+DELIMITER ;
+
+CALL sp_insertdept(60, 'Training', 'Pune', 230)
+
+
+Select * from Department
