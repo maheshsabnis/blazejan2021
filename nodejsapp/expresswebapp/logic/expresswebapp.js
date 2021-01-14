@@ -26,6 +26,8 @@ let router= express.Router();
 // 4a. configure the express router in middleware
 instace.use(router);
 
+
+
 // 5. define routes for Static HTML Pages
 // the default
 router.get("/", (req,resp)=>{

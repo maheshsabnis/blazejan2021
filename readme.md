@@ -717,6 +717,11 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
                 - JavaScript JavaScript   
             - Use express routing for Web Application Development     
         - REST APIs using Express.js
+            - Data Services those are used to expose data to client apps using JSON (Default) / XML / Binary
+                - Browser App (app designed using JavaScript Libraries  / Frameworks)
+                - Mobile Apps (Androis, iOS, etc.)
+                - Desktop apps (.NET / JAVA / C++, etc)
+                - Any other Thitrd Party client/vendor/partner apps
             - Http Methods
                 - get() / post() / put() / delete()
             - For REST API use following middlewares
@@ -747,6 +752,17 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
 
 
 
+- Query String
+http://server/myapp/resource.html?name1=value1&name2=value2&name3=value3....
+- part in URL after the 'first ?' is query string
+    - name1=value1&name2=value2&name3=value3
+    - server loads the query string parser
+        - read each name=value pair seperated by &
+        - obj1 = name1=value1 
+        - obj2 = name2=value2
+        - obj3 = name3=value3
+
+
 
 
 Day 7: Node.js
@@ -765,6 +781,18 @@ UI for Accepting the product data, use the <form> tag and submit the form with t
 HINT: https://www.dotnetcurry.com/nodejs/1216/using-nodejs-process-post-data
 
 Create a Node.js app that will perform Async operations for Reading / Writing data to external service using 'Q' library 
+
+Day 9: Hands-on-Lab
+
+Create an Express.js Web Application. This application will render HTML pages based on Express Routes. 
+Create REST APIs using Express.js that will perform CRUD Operations to the Pertsistable Store in memory
+Create an Array of UserName and Password, make sure that the user is able to perform REST API calls based on valid credentials
+
+
+
+
+
+
 
 
 

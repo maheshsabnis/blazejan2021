@@ -9,8 +9,26 @@
         $(document).ready(function(){
             // document.getElementById('btn').addEventListener('click', function(){...}, false);
             $("#btn").on('click',function(){
-                alert('button is clicked');
-                $(this).css('backgroundColor', 'red');
+                var xhr = new XMLHttpRequest();
+
+                xhr.onload = function(){
+                     
+                    if(xhr.status== 200) {
+                        console.log(`In onload ${xhr.response}`); 
+                    } 
+                };
+            
+              
+                xhr.onerror = function(){
+                     
+                     console.log('Some Error Occured with Http Communication');
+                };
+
+                xhr.open("GET","http://localhost:9090/api/employees");
+                console.log(btoa("mahesh:mahesh"));
+                xhr.setRequestHeader("Authorization", "basic "+ btoa("mahesh:mahesh"));
+                
+                xhr.send();
             });
         });
     </script>
