@@ -702,12 +702,33 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
 3. Web Application Development using Node.js
     - Static and Dynamic Files
     - Express.js
-    - Creating Web App using Express.js
-    - REST APIs using Express.js
-    - Session Management
-    - Indentity Management
-        - Authentication
-        - Token based security
+        - Install Express 
+            - npm install --save express
+                - The express() object
+                    - the 'use()' method to configure middlewares
+                        - express.Router()
+                            - Middleware for Routing Management
+                                - get() / post() / put() / delete()
+                    - the 'listen()' method to expose the Endpoint fot HTTP Communication
+        - Creating Web App using Express.js
+            - Using the Static pages
+                - HTML files
+                - CSS files
+                - JavaScript JavaScript   
+            - Use express routing for Web Application Development     
+        - REST APIs using Express.js
+            - Http Methods
+                - get() / post() / put() / delete()
+            - For REST API use following middlewares
+                - body-parser
+                    - use the data from HTTP Request body for POST and PUT Requests
+                - cors()
+                    - CROSS-ORIGIN-RESOURCE-SHARING (CORS)
+        - npm install --save express body-parser cors                    
+        - Session Management
+        - Indentity Management
+            - Authentication
+            - Token based security
 4.  Using Object Relational Mapping (ORM) using Node.js and Sequlize
     - Database Access
     - Performing CRUD Operations
@@ -723,6 +744,8 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
         - npm install --save q
    https://www.dotnetcurry.com/nodejs/1242/promises-nodejs-using-q-goodbye-callbacks
    https://www.dotnetcurry.com/nodejs/1225/call-external-service-using-nodejs     
+
+
 
 
 
