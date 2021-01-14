@@ -729,7 +729,7 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
                     - use the data from HTTP Request body for POST and PUT Requests
                 - cors()
                     - CROSS-ORIGIN-RESOURCE-SHARING (CORS)
-        - npm install --save express body-parser cors                    
+        - npm install --save express body-parser cors atob                   
         - Session Management
         - Indentity Management
             - Authentication

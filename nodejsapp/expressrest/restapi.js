@@ -1,5 +1,7 @@
 let express  =require('express');
 
+let atob = require('atob');
+
 // adding the body-parser as a middleware in the express
 let bodyParser = require('body-parser');
 
@@ -62,10 +64,12 @@ instance.get("/api/employees", (req,resp)=>{
     //  credValues[1] --> mahesh:mahesh
     console.log(credValues[0]    + '   ' + credValues[1]);
     console.log(credValues[1]);
-     
+
+    console.log(atob(credValues[1])); 
     // 3. split credValues based on ":"
+    // decrypt the encryped header and split it
     // further credValues[1] is split based on ':'
-    let data = credValues[1].split(':');
+    let data = atob(credValues[1]).split(':');
 
     // 4. verify the data as data[0]="mahesh" and data[1] = "mahesh"
     // optionally the credentilas can be verified against users table in database
