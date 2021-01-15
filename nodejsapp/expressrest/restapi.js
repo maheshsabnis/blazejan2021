@@ -57,7 +57,7 @@ instance.get("/api/employees", (req,resp)=>{
 
     // 1 read the authorization headers from request
     let authValues = req.headers.authorization;
-    // 2.  user sends data as 'Basic UserName:Password'
+    // 2.  user sends data as 'B    asic UserName:Password'
     // split base on  ' ' blank space between Basic and UserName:Password
     let credValues =  authValues.split(' ');
     // credValues[0]--> Basic
@@ -76,6 +76,7 @@ instance.get("/api/employees", (req,resp)=>{
     if(data[0].trim() === "mahesh" && data[1].trim() === "mahesh"){
         resp.status(200).send(employees);
     }
+
     // 5. if no match then send unAuthorized response
     resp.status(401).send(`Sorry !!! Credentials are not matched`);
 

@@ -76,7 +76,7 @@ instance.get('/api/departments/:id', (req, resp) => {
             force: false // default is true to create a table
         })
         .then(() =>
-            dept.findOne({ where: { DeptId: id } })
+            dept.findOne({ where: { DeptNo: id } })
         )
         .then((data) => {
             resp.json({ statusCode: 200, data: data })

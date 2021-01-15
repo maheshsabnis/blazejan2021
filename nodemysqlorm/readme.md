@@ -182,6 +182,6 @@ instance.delete('/api/departments/:id', (req, resp) => {
 
 // 4. listen on the port
 instance.listen(6060, () => {
-    console.log('Express Server Started on port 5060');
+    console.log('Express Server Started on port 6060');
 });
 ````

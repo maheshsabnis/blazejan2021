@@ -739,6 +739,46 @@ ProductId should be passed as string, BasePrice as Number, the ProductName has l
     - Performing CRUD Operations
     - Generating JavaScript Models from Database Tables
     - MySQL Stored Procs      
+    - Sequelize Package 
+        - Promise-based the Node.js ORM
+            - MySQL, MS-SQL, Postgres, MariaDB, SQLite
+        - For MySQL, use mysql2 package
+        - The Command Line Tools for Database-First and Code-First Approach
+            - sequqlize_auto 
+                - CLI to generate JavaScript Objects those of mapped to the Database Table
+            - sequelize_cli
+                - Used for Code-First Approach
+        - Sequelize Objects
+            - Sequelize
+                - Used to define Database Connection Metadata
+                - Contains Methods for performing CRUD operations
+                - The query() method is used to execute operations Asynchronously
+                    - Queries (SQL Statements and DML) 
+                    - Stored Procs                
+            - DataType
+                - Provide Typed Mapping from Node.js to the Database Columns
+                    - Uses this for Mapping JavaSCript Object to the Table Columns w.r.t. Data Types
+            - Model
+                - Class, that act as a base class fro defining JavaScript class that will be ised to generate the Database table with Code-First Approach
+        - Using Database First Approach
+            - Install sequelize, sequelize-auto  and mysql2 in global scope
+            - npm install -g sequelize sequelize-auto mysql2   
+                - This will enable the Node.js to run the command line tool to generate JavaScript Objects from MySQL database          
+            - Install these packages local to the application so that the app uses sequelize orm
+                -  npm install --save sequelize sequelize-auto mysql2     
+            - run the following commans to generate JavaScript objects from database          
+                - sequelize-auto -h localhost -d Company -u root -x P@ssw0rd_ --dialect mysql -t Department,Employee
+
+                    - -h, the name/ IP of the hosting server having database instance running
+                    - -d, the name of the database
+                    - -u, the database instance user name (aka admin) 
+                    - -x, the password
+                    - --dialect, the database provider mysql, mssql, etc.
+                    - -t, commna seperated list of tables from which JavaScript Objects will be generated
+                - After successful execution of this command the 'models' folder will be generated with JavaScript objects in it.     
+
+
+
 5. Accessing External REST APIs in Node.js Apps
     - Server Side Promise Libraries
 6. Accessing NoSQL DynamoDB in Node.js REST APIs
@@ -787,6 +827,24 @@ Day 9: Hands-on-Lab
 Create an Express.js Web Application. This application will render HTML pages based on Express Routes. 
 Create REST APIs using Express.js that will perform CRUD Operations to the Pertsistable Store in memory
 Create an Array of UserName and Password, make sure that the user is able to perform REST API calls based on valid credentials
+
+
+Day 10: Hands-on-Lab
+
+Create a REST API that will have following operations to be performed using REST Calls
+
+1. Perform CRUD operations on Employee with following
+    - verify the column validations in Application Server before sending request to DB using ORM
+        - Validate all constraints in the Application Server, e.g. Not Null, FOreign Key, etc.
+    - If the validation Failed the return the error response
+2. Create a Get Request that will return All Employees in Specific DeptName with structure of response as
+    - EmpNo, EmpName, DeptName, Designation, Salary
+3. Create a Get Request that will return Tax for each employee as
+    - 10% of salary from 1L to 2L
+    - 20% of salary from 2L to 5L
+    - 30% more that 5L             
+    HINT: Create a Stored Proc or write the logic in Application Server in REST APIs
+
 
 
 
