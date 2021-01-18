@@ -97,3 +97,14 @@ CALL sp_insertdept(60, 'Training', 'Pune', 230)
 
 
 Select * from Department
+
+use company
+
+CREATE TABLE IF NOT EXISTS Users (
+  Id int AUTO_INCREMENT PRIMARY KEY,
+  UserName varchar(50) NOT NULL,
+  Password varchar(255) NOT NULL,
+  Email varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2  
+ 
+ INSERT INTO Users (Id, UserName, Password, Email) VALUES (1, 'mahesh', 'mahesh', 'mahesh@test.com');

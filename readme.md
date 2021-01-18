@@ -804,6 +804,98 @@ http://server/myapp/resource.html?name1=value1&name2=value2&name3=value3....
 
 
 
+# React.js For Front-End-Programming
+
+The Library for UI.
+1. Creating a React.js Project
+    - Use the React Command Line Interface (CLI) for creating React Project
+    - npm install -g create-react-app / sudo npm install -g create-react-app
+        - Provide a facility to generate
+            - React Application
+            - Manage Default Dependencies for React App
+            - Managing React Build
+            - Managing React Test
+            - Host React App and Deliver the app to Browser
+        - react-scripts
+            - Package for React CLI    
+            - Uses internally
+                - WebPack
+                    - The Module Bundler (create a bundle of all npm package) and build it
+                    - Standard React Packages
+                        - react
+                            - Contains React.js Object Model
+                        - react-dom
+                            - Contains the object model for DOM Generation and Rendering
+        - Generate the React Project
+            - create-react-app  <NAME-OF-THE-APPLICATION>                    
+    - Create a React Application from Scratch
+        - Install WebPack
+        - COnfigure Web Pack
+        - COnfigure and install all dependencies                        
+
+# React.js object Model
+
+The 'react' package
+- The 'React' Module
+    - Contains all Classes for the React.js App
+        - The 'Component<P,S>' class
+            - The base class for creating React-Component for UI Creation 
+            - Contains Two-Generic Properties as follows
+                - P, the 'props' object, this is the collection of properties to share data from Parent Component to Child Component.
+                    - The 'props' is scopped across all components in the react application i.e. the 'immutable' object
+                    - Dynamic object that can be added with runtime dynamic properties to share data across components
+                - S, the 'state' property. This is a local state (data) of the component
+                    - The 'state' object live only inside the component        
+            - The constructor(props){}
+                - This is used to call the based class constructor (Component's class)
+                - This is used to define local state properties for the component
+                    - this.state = {  list of properties };         
+            -  the 'render()' method
+                - this is used to generate the DOM based on HTML abstracted in the component and the state,props and events        
+                    - state,props will be used to show data and accept data from end-user from HTML elements
+                    - these propertes will be sed to generater HTML elements
+                    - Events for HTML elements will be used to set the behavior of Component
+            - Contains lifecycle method
+                - These methods manages the various stages of component rendering and Data updates
+                    - Init (state, props), update, mount, unmount, etc.
+            - Logic Method for events        
+    - React 16.0+ , Component can be created using
+        - React's OWN Traditional Class Component, the ES 6 class derived from 'Component' base class
+        - React 16.0+ Functional Component, the JavaScript funciton that returns HTML             
+- The React module from  'react' package uses 'react-dom' package contains ReactDOM module
+- The ReactDOM contains
+    - The JSX parser, Xml Syntax Extensoin for JavaScript in React.js
+        - The Start tag must have end tag
+            - e.g. <input/>, must be closed, else JSX will geerate Compiler Error           
+        - JXS Attribute System, the new attributes for HTML UI elements, jsut like HTML elements
+            - name
+            - className, instead of class       
+            - htmlfor, instaed of for
+            - value
+            - Events Attributes
+                - onClick, onChange, keyUp, mouseEnter, mouseLeave, etc.
+    - ReactDOM.render()
+        - This accepts the Component as input parameter and 'mount' aka (render and load) the component on HTML page and shown in browser.
+            - This executes the LifeCycle methods of the Component so that is can be effective in browser      
+            - Monitor any state updates of the components and based on that it will re-render part of the component aka Virtual DOM      
+1. Creating Components
+2. Parent Child Relationship
+3. Reusablity in Components
+4. React.js Lifecycle
+5. React.js Forms with Validation
+6. Service Calls, accessing REST APIs with and without security 
+7. React Routing for Single Page Front-End Application
+8. Higher-Order-Components (HOC), pattern of Rendering Components in JavaScript on Demand
+9. ErrorBoundries
+10. Functional Components
+11. React Hooks, state, context, new way of REST Calls
+12. State Management using Redux
+13. Testing  
+
+
+
+
+
 
 Day 7: Node.js
 
