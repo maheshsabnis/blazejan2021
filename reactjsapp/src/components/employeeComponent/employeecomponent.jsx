@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Departments, Designations} from './../../models/constants';
 import { Logic } from "./../../models/logic";
 import DropDownComponent from './../reusablecomponents/dropdowncomponent';
-
+import TableComponent from './../reusablecomponents/tablecomponent';
 class EmployeeComponent extends Component {
     /**
      * @param {any} props
@@ -211,6 +211,8 @@ class EmployeeComponent extends Component {
              }
             </tbody>
          </table>
+          <br/>
+          <TableComponent dataSource={this.state.employees} canDelete={true}></TableComponent>
             </div>
          );
     }
