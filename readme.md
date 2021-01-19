@@ -1204,9 +1204,217 @@ class StateComponent extends Component {
 export default StateComponent;
 ````
  
+constant.js
+
+```` javascript
+export const Departments=['IT', 'HRD', 'TRAINING', 'SALES'];
+export const Designations =['Manager', 'Lead', 'Engineer', 'Trainer', 'Executive', 'Sr.Manager'];
+````
+
+logic.js
+
+```` javascript
+export class Logic {
+    constructor(){
+        this.employees=[];
+    }
+
+    getEmployees(){
+        this.employees.push(
+            {EmpNo:101, EmpName: 'Akash', DeptName: 'IT', Designation: 'Manager', Salary:10000},
+            {EmpNo:102, EmpName: 'Mukesh', DeptName: 'HRD', Designation: 'Lead', Salary:12000},
+            {EmpNo:103, EmpName: 'Abhay', DeptName: 'SALES', Designation: 'Manager', Salary:30000},
+            {EmpNo:104, EmpName: 'Nandu', DeptName: 'TRAINING', Designation: 'Trainer', Salary:17000}
+        );
+        return this.employees;
+    }
+
+    addEmployee(emp){
+        this.employees.push(emp);
+        return this.employees;
+    }
+}
+
+````
+
+
+```` javascript
+
+
+
+import React, { Component } from 'react';
+import {Departments, Designations} from './../../models/constants';
+import { Logic } from "./../../models/logic";
+
+class EmployeeComponent extends Component {
+    /**
+     * @param {any} props
+     */
+    constructor(props) {
+        super(props);
+        this.state = {  
+            EmpNo:0,
+            EmpName: '',
+            DeptName: '',
+            Designation: '',
+            Salary:0,
+            departments: Departments, // store constant array
+            designations: Designations, // store constant array
+            employees:[]
+        };
+        // define an instance of Logic class
+        this.logic = new Logic();
+        // set the initial value of the state in Constructor thats why the render() method
+        // will take the initial value for employees and rendering HTML Table 
+        this.state.employees =  this.logic.getEmployees();
+    }
+    /**
+     * @param {{ target: { name: any; value: any; }; }} evt
+     */
+    handleValueChange=(evt)=> {
+        this.setState({[evt.target.name]: evt.target.value});
+    };
+
+    clear=()=>{
+        this.setState({EmpNo:0});
+        this.setState({EmpName:''});
+        this.setState({DeptName:''});
+        this.setState({Designation:''});
+        this.setState({Salary:0});
+         
+    };
+
+    save=()=>{
+        let emp = {
+            EmpNo: this.state.EmpNo,
+            EmpName: this.state.EmpName,
+            DeptName: this.state.DeptName,
+            Designation: this.state.Designation,
+            Salary: this.state.Salary
+        };
+        let emps = this.logic.addEmployee(emp);
+            // direct state update not allows with new values for state properties
+            // use setState()
+        // this.state.employees = emps;
+
+        // perform state mutation using setState()
+        // since the collection state properties 
+        // delays the execution for update, pass the callback parameter 
+        // to setState() method so that the the setState() will execute the callback 
+        // and during that time the collection will be updated asynchronously
+        this.setState({employees: emps},()=>{});
+
+
+        console.log(`EMployees = ${JSON.stringify(this.state.employees)}`);
+    };
+
+
+    render() { 
+        return ( 
+            <div className="container">
+            <h2>The Employee Infromation</h2>
+                <div className="form-group">
+                  <label>EmpNo</label>
+                  <input type="text" className="form-control"
+                  name="EmpNo"
+                  value={this.state.EmpNo}
+                   onChange={this.handleValueChange.bind(this)}/>
+                </div>
+                <div className="form-group">
+                    <label>EmpName</label>
+                    <input type="text" className="form-control"
+                    name="EmpName"
+                    value={this.state.EmpName}
+                     onChange={this.handleValueChange.bind(this)}/>
+              </div>
+              <div className="form-group">
+                <label>DeptName</label>
+                <select className="form-control"
+                name="DeptName"
+                value={this.state.DeptName}
+                 onChange={this.handleValueChange.bind(this)}>
+                   {
+                       /* generate the <option> in DOM Tree based on Collection */
+                       this.state.departments.map((dept,index)=>(
+                           <option key={index} value={dept}>{dept}</option>
+                       ))
+                   }
+                 </select>
+            </div>
+            <div className="form-group">
+                <label>Designation</label>
+                <select className="form-control"
+                name="Designation"
+                value={this.state.Designation}
+                 onChange={this.handleValueChange.bind(this)}>
+                 {
+                    /* generate the <option> in DOM Tree based on Collection */
+                    this.state.designations.map((desig,index)=>(
+                        <option key={index} value={desig}>{desig}</option>
+                    ))
+                }
+                 </select>
+            </div>
+            <div className="form-group">
+                    <label>Salarys</label>
+                    <input type="text" className="form-control"
+                    name="Salary"
+                    value={this.state.Salary}
+                     onChange={this.handleValueChange.bind(this)}/>
+              </div>
+              <div className="form-group">
+               <input type="button" value="Clear" onClick={this.clear.bind(this)} className="btn btn-warning"/>
+               <input type="button" value="Save" onClick={this.save.bind(this)} className="btn btn-success"/>
+        </div>
+        <hr/>
+        <h2>The Employee List</h2>
+        <table className="table table-bordered table-striped table-dark">
+          <thead>
+               <tr>
+                <th>EmpNo</th>
+                <th>EmpName</th>
+                <th>DeptName</th>
+                <th>Designation</th>
+                <th>Salary</th>
+               </tr> 
+          </thead>
+          <tbody>
+            {
+                this.state.employees.map((emp,index)=>(
+                    <tr key={index}>
+                      <td>{emp.EmpNo}</td>
+                      <td>{emp.EmpName}</td>
+                      <td>{emp.DeptName}</td>
+                      <td>{emp.Designation}</td>
+                      <td>{emp.Salary}</td>
+                    </tr>
+                ))
+            }
+          </tbody>
+        </table>
+            </div>
+         );
+    }
+}
+ 
+export default EmployeeComponent;
+````
+
+
+
+
 
 
 3. Reusablity in Components
+    - Guidelines for creating the re-usable component
+        - Decide the UI
+            - Plan for UI elements that will be used to ganarate UI for the component
+        - Decide 'props' those are accepted by the component from its parent
+            - These props will be used to show data in reusable component's UI elements
+        - Decide events those will be emitted by child component tom its parent component along with data to be emitted        
+
+
+
 4. React.js Lifecycle
 5. React.js Forms with Validation
 6. Service Calls, accessing REST APIs with and without security 
@@ -1262,6 +1470,17 @@ Create a REST API that will have following operations to be performed using REST
     - 20% of salary from 2L to 5L
     - 30% more that 5L             
     HINT: Create a Stored Proc or write the logic in Application Server in REST APIs
+
+Hads-on Day: 12
+
+Create a GridComponent in React.js using HTML <table> element with the following specifications
+    - The Table should accept the DataSource property from parent of the type aray to generate Rows and Columns (mandatory today)
+    - Make sure that the the DataSource in not undefined or empty, if it is, then return a message that Grid Cannot be generated to parent (mandatory today)
+    - When a row is selected from the GridComponent, the data of the selected row must be passed to the parent component. so that parent componenyt can update it(mandatory today)
+    - The GridComponent, can accept the 'canDelete' prop type form parent as boolean. If the 'canDelete' is true, then each row must generate the delete button and whrn this button is clicked, the row must be deleted from the array of the parent component. (mandatory today)
+    - The GridComponent can accept isSort boolean prop type and sortKey prop type. If isSort is true, then the daata in the GridComponenty must be sorted in ascending order of the 'sortKey' value
+        - if isSort = true and sortKey=ProductName, then the data in GridComponent must be shown in sorted order of the ProductName (mandatory today)
+    - GridComponent accept props type to show number of  rows based on rowCount prop type passed from parent. The parent may keep of changing value of the rowCount and based on the rowCount, the GridComponeny should show the records. (optional)       
 
 
 

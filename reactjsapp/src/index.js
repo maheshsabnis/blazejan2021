@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+// importing bootstrap
+import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 import App from './App';
 // import the component to be mounted
 import FirstComponent from './components/firstComponent';
 import ParentComponent from "./components/propsstate/parentChild";
 import StateComponent from './components/propsstate/stateComponent';
+import EmployeeComponent from './components/employeeComponent/employeecomponent';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -18,7 +23,7 @@ let newmessage  = "New Message";
 // the FirstComponent must accept it as the 'props'
 ReactDOM.render(
   <React.StrictMode>
-    <StateComponent/>
+    <EmployeeComponent/>
   </React.StrictMode>,
   document.getElementById('root')
 );
