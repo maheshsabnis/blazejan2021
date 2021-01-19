@@ -3,7 +3,7 @@ let setObjects = new Set();
 setObjects.add({id:101, name:'A'});
 setObjects.add({id:102, name:'B'});
 setObjects.add({id:103, name:'C'});
-setObjects.add({id:101, name:'A'}); // --> Separate object having same values
+setObjects.add({id:101, name:'A'});  
 
 console.log(`Size of setObjects = ${setObjects.size}`);
 console.log(setObjects);
