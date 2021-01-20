@@ -14,6 +14,7 @@ import EmployeeComponent from './components/employeeComponent/employeecomponent'
 import ProductComponent from './components/griddemoingcomponents/productcomponent';
 import LfecycleParentComponent from './components/lifecyclemethod/lifecycelcomponent';
 import ContainerComponent from './components/errorboundries/errorComponent';
+import ValidationComponent from './components/validationcomponent/validationComponent'
 import reportWebVitals from './reportWebVitals';
 
 let message = 'Hi Component you are being mounted';
@@ -25,7 +26,7 @@ let newmessage  = "New Message";
 // the FirstComponent must accept it as the 'props'
 ReactDOM.render(
   <React.StrictMode>
-    <ContainerComponent/>
+    <ValidationComponent/>
   </React.StrictMode>,
   document.getElementById('root')
 );

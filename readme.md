@@ -1417,6 +1417,9 @@ export default EmployeeComponent;
 
 4. React.js Lifecycle
 5. React.js Forms with Validation
+    - HTML 5 vValidation Techniques that is used by JSX to validate inputs from the end-user
+        - requred, pattern, min, max, minlength, maclength, email
+        - HTML 5 = Html Tag + Inline JavaScript + Inline CSS 
 6. Service Calls, accessing REST APIs with and without security 
 7. React Routing for Single Page Front-End Application
 8. Higher-Order-Components (HOC), pattern of Rendering Components in JavaScript on Demand
