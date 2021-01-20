@@ -4,6 +4,9 @@ export class Logic {
     }
 
     getEmployees(){
+
+
+        
         this.employees.push(
             {EmpNo:101, EmpName: 'Akash', DeptName: 'IT', Designation: 'Manager', Salary:10000},
             {EmpNo:102, EmpName: 'Mukesh', DeptName: 'HRD', Designation: 'Lead', Salary:12000},

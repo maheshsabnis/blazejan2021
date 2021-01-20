@@ -1,0 +1,84 @@
+1. split() method is used to divide string into seperate strings. str.split("_")
+
+2. For iterating over an array we have forEach(), filter(), map(), find(), findindex(), indexOf().
+
+3. shift() is used to remove first element from array.
+
+4. unshift() is used to remove first element from array.
+
+5. forEach() only iterates over an array but doesnt return whereas map() iterates and also returns that is creates new array for every element.
+
+6. Template string
+
+7. Arrow operator should be used for this binding and having clean syntax.
+
+8. Multiple UI elements with same class name can be read by document.getElementsByClassName("class_name")
+
+9. IIFE
+
+10.
+
+11. When we need to pass variable number of parameters to a function we use rest parameters.
+
+12. 0 1 2 3 4 5 6 7 8 9
+
+13.
+
+14. Map collection is used to  store data in key/value pairs
+
+15. Size of setObjects = 4 
+	{id:101, name:'A'}
+	{id:102, name:'B'}
+	{id:103, name:'C'}
+	{id:101, name:'A'}
+
+16. true
+    false
+    true
+
+17. obj.x = 10
+    after equating obj.x to obj1, the obj.x=10 and obj1.x=10
+    after updating obj1.x to 900, the value of obj1.x=900 and value of obj.x=900
+
+18. Inside loop i=0
+ i=1
+ i=2
+ i=3
+.
+.
+.
+ i=9
+Ouside loop i=10
+Ouside loop after increament i=11
+
+19. ["Sumit", "Saket" , "Mahesh" , "Vikram" , "Subodh" , "Pankaj" , "Manish" , "Abhijit" , "Suprotim" , "Kumarmangalam"] //ascending
+	["Kumarmangalam" , "Suprotim" , "Abhijit" , "Mahesh" , "Vikram" , "Subodh" , "Pankaj" , "Manish" , "Sumit" , "Saket"] //descending
+
+20. for..of loop
+
+21. [10,20,30]
+    [10,20,30,40,50,60,70,80]
+
+22. @types/node contains type definitions for Node.js
+
+23. require() is used to make a call to invoke modules and libraries
+
+24.  
+
+26. request.method()
+
+27. await is used to wait for a specific time for a promise.
+
+29. q is a promise library used to implement asynsc, await, promises. 
+
+34. Difference between AUTO_INCREMENT and Primary key in MySQL: a table can have only 1 primary key whereas 
+	we can have multiple AUTO_INCREMENT keys. AUTO_INCREMENT can increment automatically when if not passed, not
+	the case with primary key.
+
+35. We can use AUTO_INCREMENT keys as Primary keys with constraint UNIQUE and NOT NULL.
+
+36.  ALTER TABLE tablename key(columnname) values(xyz)
+
+38. npm install -g sequelize, sequelize-auto, sql2
+
+40. Sequlize.query() method is ued to run SQL queries

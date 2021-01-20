@@ -1,0 +1,108 @@
+Javascript Test Paper (50/80)
+
+1.Which method of the string object is used to divide the string into separate strings?
+
+Ans: String.split() method (correct)
+
+2. Array.forEach(), Array.map(), Array.indexof(), Array .of() (correct)
+
+3. To remove the first character, we can use charAt(0) and replace it with blank.  (Partially correct)
+	or we can directly use slice() method.
+
+4. Splice() method
+Three parameters. start index, delete index and value. So delete index will be 0. (Partially correct)
+
+5. Main difference is forEach() doesn't return anything. and map() returns
+the whole array. (Correct)
+
+6. string.concat(str1,str2, ....); (wrong)
+
+7. Arrow function should be used when a callback is needed. They are
+   efficient when we are using forEach() and map (). (Correct)
+
+9. IIFE will be invoked first. (Correct)
+
+
+11. Rest parameter allows a function to accept any number of parameters.
+    We don't need to define it first. (Correct)
+
+12.0 (Correct)
+1
+2
+
+.
+...to 10
+
+13. Iterator is a pointer for traversing the data in data structure like arrays and maps.
+    Generators are used to recieve input and send output. It uses yield function by which
+     it can pause itself. (Correct)
+14. Map (correct)
+
+15. Size of set objects =4 (Correct)
+    and it will display the set also.4
+
+16. true (Correct)
+    false
+    true
+
+17. obj.x =10 (Correct)
+    after equating , the obj.x =10 and obj1.x =10
+    after updating obj1.x to 900, the value of obj1.x =900 and obj.x = 900
+
+18. Inside loop i =0 (Correct)
+    Inside loop i = 1
+     .........
+    ..........
+     inside loop i = 9
+     outside loop i =10
+     after increment i =11
+
+19. (Not Attempted)
+
+20. for-of loop (Correct)
+
+21. The new elements will be added in the array. (Incorrect)
+	and it will reyrn the whole array with added alements
+
+22. It includes type definition for node.js (correct)
+
+23. require() is used to load js modules like http or express and many more (Partially correct)
+
+24. module.exports is used to export a piece of code from one file, (Correct)
+    so other files can access the exported code. it's by default in js
+
+25. to get the url of the request (Correct)
+
+26. http.methods, http.get(), http.request() (Incorrect)
+
+27. Async is used when we are dealing with promises. (Incorrect)
+
+28. Only in async one can use the await method. (Correct)
+
+29. For better functionality of promises, q module is used. It's a promise library (Correct)
+
+30. In http.request you can defone what request you want post//put//delete/get (Incorrect)
+
+31. record.destroy({where:}) (Correct)
+
+32. add into values table_name() (Incorrect)
+
+33. select _ from table_name (Incorrect)
+	from ....
+	where condition:
+
+34. AUTO_INCREMENT automatically increment value it can be used with any variable, with primary key also.
+	whereas primary key is unique for every record. (Partially Correct)
+35. yes we can (Incorrect)
+
+36. ALTER Table table_name (Correct)
+	Add Column_name varchar10;
+
+37. sequelize-auto -t js -h localhost -d test -u root -p root -o models (Correct)
+
+ 38. npm install -g sequelize sequelize-auto mysql2 (Correct)
+
+	--save
+
+
+			

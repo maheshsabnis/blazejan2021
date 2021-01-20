@@ -11,7 +11,9 @@ import FirstComponent from './components/firstComponent';
 import ParentComponent from "./components/propsstate/parentChild";
 import StateComponent from './components/propsstate/stateComponent';
 import EmployeeComponent from './components/employeeComponent/employeecomponent';
-
+import ProductComponent from './components/griddemoingcomponents/productcomponent';
+import LfecycleParentComponent from './components/lifecyclemethod/lifecycelcomponent';
+import ContainerComponent from './components/errorboundries/errorComponent';
 import reportWebVitals from './reportWebVitals';
 
 let message = 'Hi Component you are being mounted';
@@ -23,7 +25,7 @@ let newmessage  = "New Message";
 // the FirstComponent must accept it as the 'props'
 ReactDOM.render(
   <React.StrictMode>
-    <EmployeeComponent/>
+    <ContainerComponent/>
   </React.StrictMode>,
   document.getElementById('root')
 );

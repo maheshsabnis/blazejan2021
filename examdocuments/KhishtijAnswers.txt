@@ -1,0 +1,192 @@
+Kshitij Narvekar	
+
+Answer 1. -
+	The split() method is used to split a string into an array of substrings and returns that array.It does not change the original string
+
+Answer 2. - 
+		1. For Loop-
+			for(i=0;i<length;i++)
+			
+			You can use break and continue statements
+		
+		2. prototype.forEach -
+			array.forEach(function(item,index){})
+			
+			cannot use break and continue works well with associative arrays
+		
+		3. map()-
+			arr2 = arr1.map(function);
+
+			it create a new array by performing a function on each array element and does not change the original array
+
+		4. filter()-
+			arr1 = arr2.filter(function);
+
+			it creates a new array with array elements that return true for the function
+
+		5. reduce()-
+			arr1 = arrr2.reduce(function);
+
+			it runs a function on each array element to produce a single value. it works from left-right
+
+		6. every()-
+			arr1 = arr2.every(function);
+
+			it checks if all the values in the array return true for the function
+
+		7. some()-
+			arr1 = arr2.some(function);
+
+			it checks if some of the values in the array return true for the function
+
+		8. indexOf()-
+			idx = arr1.indexOf("element");
+
+			searches for the element in the array and returns its index.
+
+		9. find()-
+			first = arr1.find(function);
+
+			returns the value of the first element in the array that returns true for the function
+
+Answer 3-
+		The shift() method removes the first element from the array and returns the removed item and changes the original array.
+
+		arr.shift();
+
+Answer 4-
+		The unshift() method is used to add element to the first position and returns the new length of the array
+
+		arr.unshift();
+
+Answer 5-
+		map() returns a new array and forEach return nothing undefined. because of this you can chain map() with filter or other functions but not with forEach().
+		Both functions dont change the array but in the callback map() use a new array while forEach() uses the same array.
+
+Answer 6-
+		es6 gives a concat() method to concate strings which returns a new single string
+
+Answer 7-
+		with arrow functions you dont need to use .bind(this) and they allow the function code to be much shorter
+
+		var name = (e) => expression;
+
+Answer 8-
+		document.getElementsByClassName('class1')		
+		document.querySelectorAll('.class1')
+		document.querySelectorAll('.class1,.class2')
+
+Answer 9-
+		window.onload executes after all the css and <script> have been loaded so the IIFE will be executed first.
+
+Answer 10-
+	var foo = function(){};
+
+Answer 11-
+		Rest parameter allows us to represent an indefinite number of araguments as an array
+
+Answer 12-
+		10
+
+Answer 13-
+		An iterator traverses a collection one at a time using the next() method
+		A generator generates a sequence one item at time.You can pause the execution of generators using the Yield keyword.
+
+Answer 14-
+		Map() is a collection is use dto store key value pairs 
+
+Answer 15-
+		Size of Object = 4
+		it will list all the four added objects
+
+Answer 16 -
+		true
+		false
+		true
+
+Answer 17-
+		obj.x = 10 and obj1.x =10
+		obj1.x = 900 and obj.x =900
+
+
+Answer 18 -
+		Inside Loop i = 0 - 9 
+		Outside Loop i = 10 
+		Outside Loop i after increment = 11
+
+Answer 19-
+		 ["Sumit","Saket","Mahesh","Vikram","Subodh","Pankaj","Manish","Abhijit","Suprotim","Kumarmangalam"]
+
+		 ["Kumarmangalam","Suprotim","Abhijit","Mahesh","Vikram","Subodh","Pankaj","Manish","Sumit","Saket"]
+
+Answer 20-
+		for-of-loop
+
+Answer 21 -
+		[10, 20, 30]
+		[10, 20, 30, 40, 50, 60, 70, 80]
+
+Answer 22-
+		
+Answer 23-
+		require() is used for importing packages into a file which are exported by module.exports
+
+Answer 24-
+		module.exports is used define stuff that can be exportes or used by other files or modules
+
+Answer 25-
+		request.url in http.createServer() returns the request URL string
+
+Answer 26-
+		request.method is used to check if the request is get or post or put etc.
+
+Answer 27-
+		async is used to return promises. if your application is using callbacks the you should move to async as it returns a value when the promise gets fullfiled.
+
+Answer 28-
+		await can only be used inside a async function 
+
+Answer 29-
+		with the Q module you can use a ladder of .then() calls . and avoid the pyramid of doom.
+		A function that accepts a callback instead of a return value
+
+Answer 30-
+	http.request() allows you to make an http request to the specified url.
+	
+Answer 31-
+		model.destroy can execute the delete query
+
+Answer 32-
+		model.create() adds a record
+
+Answer 33-
+		model.findAll() allows you to search
+
+Answer 34-
+		auto increment simply keep on incrementing by 1 
+		whereas primary key is unique identification of a row. 
+
+Answer 35-
+		Yes we can use auto increment as primaty key
+
+Answer 36-
+		ALTER TABLE Customer MODIFY Address char(100);
+
+Answer 39-
+		DataType in sequelize allows you to specify the MySQL data types like INTEGER etc. in the sequelize model.
+
+Answer 40-
+		sequelize.query() allows you to execute the SQL string query.
+
+
+
+
+
+
+
+
+
+
+
+
+

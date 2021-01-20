@@ -1,0 +1,61 @@
+import React, { Component } from 'react';
+
+
+class CounterValueComonent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  
+            counterValue:0
+        };
+    }
+    increament=()=>{
+        this.setState({counterValue: this.state.counterValue+1});
+    }
+    render() { 
+        try {
+        if(this.state.counterValue === 10) {
+            throw new Error('I have reached to max counter value');
+        } else {
+        return ( 
+            <div className="container">
+              <strong>
+                The Counter Value = {this.state.counterValue}
+              </strong>
+              <br/>
+              <input type="button" value="Increament" onClick={this.increament.bind(this)}/>
+            </div>
+         );
+        }
+        
+    }catch (e) {
+            return (
+                <div className="container">
+                    <h2>The Exception has been thrown {e.message}</h2>
+                </div>
+            );
+        } 
+       
+        
+    }
+}
+ class ContainerComponent extends Component {
+     constructor(props) {
+         super(props);
+         this.state = {  };
+     }
+     reloaad=()=>{
+         // reloading the same page
+         window.history.go(0);
+     }
+     render() { 
+         return ( 
+             <div className="container">
+               <CounterValueComonent></CounterValueComonent>
+               <hr/>
+               <input type="button" value="Reload" onClick={this.reloaad.bind(this)}/>
+             </div>
+         );
+     }
+ }
+  
+ export default ContainerComponent;

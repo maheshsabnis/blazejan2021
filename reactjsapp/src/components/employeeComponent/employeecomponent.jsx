@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Departments, Designations} from './../../models/constants';
 import { Logic } from "./../../models/logic";
 import DropDownComponent from './../reusablecomponents/dropdowncomponent';
-import TableComponent from './../reusablecomponents/tablecomponent';
+ import GridComponent from './../reusablecomponents/gridComponent';
 class EmployeeComponent extends Component {
     /**
      * @param {any} props
@@ -22,15 +22,31 @@ class EmployeeComponent extends Component {
         };
         // define an instance of Logic class
         this.logic = new Logic();
+       
+         
+    }
+
+
+    // use componentDidMount() method to perform all time consuming tasks
+    // e.g. AJAX Calls or all suc operation those are delayed because of
+    // some inconsistencies
+
+    componentDidMount=()=>{
+        alert('In Component Did Mount');
         // set the initial value of the state in Constructor thats why the render() method
         // will take the initial value for employees and rendering HTML Table 
         this.state.employees =  this.logic.getEmployees();
+        alert(JSON.stringify(this.state.employees));
         // read all object keys for 0th record in employees array
         // this is the initial value for state so render() methdo will accept it
         // for generating HTML DOM
-        this.state.tableColumnHeaders = Object.keys(this.state.employees[0]);
-      
+        if(this.state.employees.length >0){
+            this.state.tableColumnHeaders = Object.keys(this.state.employees[0]);
+        }
     }
+
+
+
     /**
      * @param {{ target: { name: any; value: any; }; }} evt
      */
@@ -89,7 +105,10 @@ class EmployeeComponent extends Component {
         this.setState({Designation:val});
     };
 
+     
+
     render() { 
+         
         return ( 
             <div className="container">
             <h2>The Employee Infromation</h2>
@@ -185,7 +204,7 @@ class EmployeeComponent extends Component {
           </tbody>
         </table>*/}
          {/* Dynamic Table Generation */}
-         <h6>Dynamic Table</h6>
+       {/*  <h6>Dynamic Table</h6>
          <table className="table table-bordered table-striped table-dark">
             <thead>
               <tr>
@@ -210,11 +229,14 @@ class EmployeeComponent extends Component {
                 ))
              }
             </tbody>
-         </table>
+            </table> */}
           <br/>
-          <TableComponent dataSource={this.state.employees} canDelete={true}></TableComponent>
+          <GridComponent DataSource={this.state.employees} canDelete={false}
+          emitSelectedRow={this.getSelectedEmp.bind(this)}></GridComponent>
             </div>
+        
          );
+        
     }
 }
  

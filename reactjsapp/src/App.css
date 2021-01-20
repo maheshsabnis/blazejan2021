@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+/* Use this to deactivate the default iframe taht is showing stack trace*/
+iframe {
+  display: none;
+}
 
 .App-logo {
   height: 40vmin;

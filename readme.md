@@ -1411,7 +1411,7 @@ export default EmployeeComponent;
             - Plan for UI elements that will be used to ganarate UI for the component
         - Decide 'props' those are accepted by the component from its parent
             - These props will be used to show data in reusable component's UI elements
-        - Decide events those will be emitted by child component tom its parent component along with data to be emitted        
+        - Decide events those will be emitted by child component to its parent component along with data to be emitted        
 
 
 
@@ -1421,6 +1421,15 @@ export default EmployeeComponent;
 7. React Routing for Single Page Front-End Application
 8. Higher-Order-Components (HOC), pattern of Rendering Components in JavaScript on Demand
 9. ErrorBoundries
+    - Error Boundries is an approach of Handling Error in React.js (16.0+) to make sure that is the component (parent to child) is crashing during rendering or during executing any logic then handl and log the error and render the fallabck HTML UI
+    - Two Ways of Handling Error 
+        - Using Try...catch inside the render() method (available in all react versions)
+            - try..catch must be written in render() method od each component
+            - not a good idea if the app have several components loaded at a time
+        - Create a global boundry component that will act as a parent component for all other components to be rendered
+            - this global boundry component will implement componentDidCatch() method and getDerivedStateFromError() property to listen exceptions thrown by any child componenty while rendering.     
+            - the render method of this global boundry component will be responsible to rnder the fallback UI when a child component crashes
+        - Please note that the iframe must be set to display as none in the application if you are using create-react-app for creating the react application    
 10. Functional Components
 11. React Hooks, state, context, new way of REST Calls
 12. State Management using Redux
