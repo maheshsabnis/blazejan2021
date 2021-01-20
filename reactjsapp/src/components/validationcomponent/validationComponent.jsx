@@ -27,12 +27,25 @@ class ValidationComponent extends Component {
                     this.setState({isEmpNoValid:false});
                     this.setState({isFormValid:false});
                   
+                    
                     tempArr.push('EmpNo is mandaory, must be +, must be max 10 in length');
                     this.setState({errorMessages:tempArr});
                     console.log(this.state.errorMessages);
 
             } else {
                 this.setState({isEmpNoValid:true});
+                this.setState({isFormValid:true});
+            }
+
+            let eno = parseInt(value);
+            let res = this.logic.getEmployees().filter((e,i)=>{
+                    return e.EmpNo === eno;
+            });
+            if(res.length >0) {
+                this.setState({isEmpNoExists:true});
+                this.setState({isFormValid:false});
+            } else {
+                this.setState({isEmpNoExists:false});
                 this.setState({isFormValid:true});
             }
         } 
