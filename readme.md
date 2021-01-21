@@ -1421,7 +1421,52 @@ export default EmployeeComponent;
         - requred, pattern, min, max, minlength, maclength, email
         - HTML 5 = Html Tag + Inline JavaScript + Inline CSS 
 6. Service Calls, accessing REST APIs with and without security 
+    - ES 6 fetch object
+        - Object that returns promise and the client / caller has to subscribe
+    - The axios library
+        - Promise based
+            - Promise().then().catch()
+        - get/post/put/delete methods returning the AxiosResponse object
+        - Use the Browser's resource for HTTP Communication
+            - Chrome, FirefoX, Safari, Opera, Edge, IE11   
+                - Latest version -3
+        - JS-Front-End Apps (Browser)
+            - React, Vue, Ember, ES6 
+            - import * as axios from 'axios'   
+                - JSObjects in browser must subscribe to the AxiosResponse     
+                    - Use 'componentDidMount()' to subscribe to the AxiosResponse and Update the State (and hence the component)
+        - Node.js on Server-Side    
+            - const axios = require('axios')
+                - Node.js Runtime aka internal Thread is responsible to subscribe to AxiosResponse
+        - npm install --save axios        
 7. React Routing for Single Page Front-End Application
+    - React-Router-Dom
+        - npm install --save react-router-dom
+            - BrowserRouter
+                - class used to manage the Routing across React Components
+                - uses the React.js Component lifecycle
+                - Use the Route Table to read the component's path to load it and render it
+                - Router
+                    - Used to manage the Routing across componnets inside the Browser
+                        - Router.Provider
+                            - Used to maintain the state of the Routing History inside the Browser based on Route table
+                            - Router-Histoty.Provider
+                                - STore all the routing histroy in the BrowserRouter inside the Browser so that the <Link> can be used to move across the routing
+                - To read the route parameters in the target component use the following property of BrowserRouter passed through props
+                    - this.props.match.params.<PAREMETER-IN-THE-ROUTE-TABLE>
+                    - this.props.match.params.id          
+                - The Receiving component must subscribe to the route parameters inside the 'componentDidMount' hook       
+            - Link
+                - The Route Link used to query to the route table 
+            - Route
+                - Define a route table as below
+                    - <Route extact path="<URL-FOR-ROUTE>" component={<COMPONENT>}>
+
+            - Switch
+                - Object used to execute the route url query to decide which component is to be loaded from the route table based on the Route Link
+            - Redirect
+                - Object that is used to defining the default Redirection
+                - Protect the route Url navigaction for invalid rourete requests    
 8. Higher-Order-Components (HOC), pattern of Rendering Components in JavaScript on Demand
 9. ErrorBoundries
     - Error Boundries is an approach of Handling Error in React.js (16.0+) to make sure that is the component (parent to child) is crashing during rendering or during executing any logic then handl and log the error and render the fallabck HTML UI
@@ -1494,6 +1539,23 @@ Create a GridComponent in React.js using HTML <table> element with the following
         - if isSort = true and sortKey=ProductName, then the data in GridComponent must be shown in sorted order of the ProductName (mandatory today)
     - GridComponent accept props type to show number of  rows based on rowCount prop type passed from parent. The parent may keep of changing value of the rowCount and based on the rowCount, the GridComponeny should show the records. (optional)       
 
+ 
+Day 14: Project EWxercise
+
+Creae MySQL-Express-React-Node Application with the following specifications
+1. Create Database Compoent with Department and Employee Tables (Already Done)
+2. Create REST APIs usign Express + Node for Performing CRUD operations on Department and Employee tables using MySQL + Sequelize (Already Done)
+3. Create a React Single Page Application  for perform CRUD Operations by calling REST APIs for Department (Done by Trainer Mahesh Sabnis) and Employee in React application
+    - Create HTTP Service usign axios for get/post/put/delete for Employee REST API
+    - Create Components for
+        - List Employees 
+            - Should Have Search Funcationality for Employee Based on DeptName / EmpName / Designation
+            - The Employee List should show all employees by default, then it should filter employees based on search
+            - Employee List must have Edit and Delete Buttons for Navigating to Edit and Delete Components
+        - Create Employee must have validation check with Validation Summary (Use Vaidation Summary Component)
+        - Edit component will edit employee with all validations
+        - Delete component is just a read-only component that will be used by end-user to see which employee is being deleted
+    - Each co0mponent must have link for gping back to List Employee component if end-use does-not want to creae/edit/delete         
 
 
 
