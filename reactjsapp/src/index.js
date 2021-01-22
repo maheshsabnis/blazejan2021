@@ -18,13 +18,22 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 // import DepartmentComponent from './components/deptcomponent/deptcomponent';
 
-import {BrowserRouter} from 'react-router-dom';
+// import {BrowserRouter} from 'react-router-dom';
 
-import MainComponent from './routingapp/maincomponent';
+// import MainComponent from './routingapp/maincomponent';
+
+//import MyComponent from './hooks/simpleHookComponent';
+
+// import StateComponent from './hooks/stateComponent';
+
+// import UseEffectAjaxComponent from './hooks/useEffectAjax';
+
+import ToggleComponent from './hooks/useeffecsdemo/ToggleComponent';
+
 
 import reportWebVitals from './reportWebVitals';
 
-// let message = 'Hi Component you are being mounted';
+ //let message = 'Hi Component you are being mounted';
 // let newmessage  = "New Message";
 
 // Mount the App component on the HTML element having 'id' as 'root'
@@ -34,9 +43,7 @@ import reportWebVitals from './reportWebVitals';
 // BrowserRouter: will execute the Default Link i.e. <Link to="/">
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <MainComponent></MainComponent>
-    </BrowserRouter>
+     <ToggleComponent></ToggleComponent>
   </React.StrictMode>,
   document.getElementById('root')
 );

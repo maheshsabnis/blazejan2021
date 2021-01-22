@@ -1478,8 +1478,75 @@ export default EmployeeComponent;
             - this global boundry component will implement componentDidCatch() method and getDerivedStateFromError() property to listen exceptions thrown by any child componenty while rendering.     
             - the render method of this global boundry component will be responsible to rnder the fallback UI when a child component crashes
         - Please note that the iframe must be set to display as none in the application if you are using create-react-app for creating the react application    
+
+# React New Programming Techniques
+
 10. Functional Components
+    - It is a  JavaScript Function that returns the HTML UI
+        - function MyComponent(){...... return(<HTML/>)};
+    - Using Function Expression returing the HTML UI
+        - const MyComponent=()=>{ ...... return (<HTML/>)};
+    - Functional Expression Component Object, the Expression itself is UI Components, this does not return HTML but its is HTML by itself (Used for ReuSable Components) 
+        const MyComponent=()=>(...... <HTML/>);      
+    - Use 'props' for data communication across Components
+        - function MyComponent(props){..... props.<PROPERTY>}
+    - All logical functions are written as constant expressions
+        - function MyComponent(){   function logic1(){}; ....  }
+        - const MyComponent=()=>{ const logic1=()=>{};  }           
 11. React Hooks, state, context, new way of REST Calls
+    - useState()
+        - Local State of the component
+            - const [<STATE_PORPERTY>, <CALLBACK_TO_UPDATE_STATE>]= useState(initialValue-of-state-property);
+                - CALLBACK_TO_UPDATE_STATE, contains the mechanism to update state
+        - function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];       
+            - S is the State Property having  'initialState' value during declaration
+                - S can be numbre, string, boolean, date, array, object
+            - Dispatch, is a type that is used to detect an event that is raised on HTML element with which the 'S' is bind. 
+            - SetStateAction, the call back that will be used to update 'initialState' of S to new State based on the Dispatch event.   
+                - This performs operation like 'setSeate()' in Component class  
+    - useContext()
+        -  Used to pass data (or object with data and callbacks) across components
+        -  The Sender Component aka Provider Components decides which component can Consume data from Context, this component that consume data from Context is called as Consumer Component          
+        - Unlike props, the Context is passed to specific components
+        - The 'createContext()' method of 'react' is used to define the cotext  
+            - const MyContext = createContext(initilValue), initialValue may be null
+                - MyContext becomes an instance of React.Context object
+                    - Following Object for COntext
+                        - MyContext.Provider, will be used by Provider/Sender Component to send value(s)
+                            - <MyContext.Provider value={<DATA-TO-BE-PROVIDED>}>
+                        - MyContext.Consumer, will be used by Comsumer / Receiver component to consume value(s)
+                            - const context = useContext(MyContext);
+                                - context, has access to all data that is provided using 'value' property of Provider
+        - Using 'useContext()' hooks the data can be comsumed by the consumer 
+    - useEffect()
+        - Combination of componentDidMount() and componentWillUnMount()
+        - Use this for AJAX calls mainly
+        - Desubscibe from any events
+        - useEffect(()=>{... componentDidMount... return()=>{.... componentWillUnMount Code.....}  }, [dependency-parameter]);
+            - ()=>{... componentDidMount...}
+                - responseible for State update
+                    - call shouldComponent() method will be called
+                        - true, HTML of the component will be updated, modify UI using Virtual DOM
+                        - false, no UI changes
+                -  ()=>{... componentDidMount...}, will continue till either the render() does not stop or the state/props changes are not completed   
+            - return()=>{.... componentWillUnMount Code.....}    
+                - the logic for component will unmount e.g. clean-up code can be written here
+            - [dependency-parameter]
+                - this will signal to useEffect() that the state update is completed and rendering() is done, so stop/complete the execution.        
+    - IMPORTANT NOTE:
+        - The React Hooks can aonly be used at functional component level or inside custom hooks, because of this, the hooks  must have codition or a dependency to complete its execution
+            - useState(), it will be exeuted only when the callback is invoked based on events else it will not in executing condition.            
+            - useContext(), it will be executed only when the consumer component is subscribing / consuming to the context
+            - useEffect(), will be executed till the depednency parameter is not signling about the state change. 
+    - useReducer()
+        - The concept of Reducer from Redux
+    - useRef()
+        - UnControlled Component
+        - use it instead of 'refs'
+    - useMemo()    
+        - Memoization
+        - The React DOM Caching with state in browser
+            - UnProved feature
 12. State Management using Redux
 13. Testing  
 
@@ -1558,7 +1625,15 @@ Creae MySQL-Express-React-Node Application with the following specifications
     - Each co0mponent must have link for gping back to List Employee component if end-use does-not want to creae/edit/delete         
 
 
+Hands-on labb Day 15
 
+Create a Functional Component that will be reponsible for performing the following: (Parent-Component)
+1. Will have the TableComponent created for showing data from REST APIs calls for Departments and employees.
+    - TableComponent will be used twice in the parent component to show Employees and Departments
+    - use 'useEffect' for Ajax calls
+    - use 'useContext' to pass Depts and Emps to these two table components
+    - use 'useState' for Depts and Emps
+2. When a user select a row from a Table showing the Departments, the other table showing the list of employees will show only employess based on the selected DeptName
 
 
 
