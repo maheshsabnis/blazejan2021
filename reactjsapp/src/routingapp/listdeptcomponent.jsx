@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { HttpSrevice } from "./../services/httpservice";
 import { Link } from "react-router-dom";
 class ListDepartmentComponent extends Component {
@@ -38,6 +38,7 @@ class ListDepartmentComponent extends Component {
         return (  
             <div className="container">
              <h2>List of Departments</h2>
+             <Fragment>
               <table className="table table-bordered table-striped">
                 <thead>
                   <tr>
@@ -71,6 +72,7 @@ class ListDepartmentComponent extends Component {
                   }
                 </tbody>
               </table>
+              </Fragment>
             </div>
         );}
     }
