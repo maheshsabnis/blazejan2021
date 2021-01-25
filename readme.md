@@ -1500,7 +1500,7 @@ export default EmployeeComponent;
             - const [<STATE_PORPERTY>, <CALLBACK_TO_UPDATE_STATE>]= useState(initialValue-of-state-property);
                 - CALLBACK_TO_UPDATE_STATE, contains the mechanism to update state
         -  The code of useState():
-            function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
+            function useState<s>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<s>>];
             - S is the State Property having  'initialState' value during declaration
                 - S can be numbre, string, boolean, date, array, object
             - Dispatch, is a type that is used to detect an event that is raised on HTML element with which the 'S' is bind. 
