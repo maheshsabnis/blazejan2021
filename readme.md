@@ -1598,7 +1598,10 @@ export default EmployeeComponent;
                     - Subscribe to the Store and Read data from Store to update Component
                 - useDispatch()
                     - dispach Action From UI
-                - useSelector() and useDispacth() does same thing taht is done by connect() method                       
+                - useSelector() and useDispacth() does same thing taht is done by connect() method                
+
+ 
+
 
 13. Testing  
 
@@ -1687,6 +1690,9 @@ Create a Functional Component that will be reponsible for performing the followi
     - use 'useState' for Depts and Emps
 2. When a user select a row from a Table showing the Departments, the other table showing the list of employees will show only employess based on the selected DeptName
 
+
+Hands-on lab
+1. create an action 'SELECT_EMPLOYEE', dispatch this action on the onClick() event of the table row in ListEmployeesComponent. The selected, employee must be displayed inside the CreateEmployeeComponent.
 
 
 
