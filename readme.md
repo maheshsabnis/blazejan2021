@@ -1507,7 +1507,7 @@ export default EmployeeComponent;
                 - This performs operation like 'setSeate()' in Component class  
     - useContext()
         -  Used to pass data (or object with data and callbacks) across components
-        -  The Sender Component aka Provider Components decides which component can Consume data from Context, this component that consume data from Context is called as Consumer Component          
+        -  The Sender Component aka Provider Components decides which component can Consume data from Context`, this component that consume data from Context is called as Consumer Component          
         - Unlike props, the Context is passed to specific components
         - The 'createContext()' method of 'react' is used to define the cotext  
             - const MyContext = createContext(initilValue), initialValue may be null
@@ -1549,6 +1549,56 @@ export default EmployeeComponent;
         - The React DOM Caching with state in browser
             - UnProved feature
 12. State Management using Redux
+    - Application State Management for React App
+    - Concepts
+        - Store
+            - A Global Object that is responsible to contains the Application State (Data for all Components)
+            - This object is loaded once with the application and contineously used for data Read/Write  operations
+        - Action
+            - The Types of Event Dispatched from User Interface (Component)
+            - Uses Action Creator
+                - The method that accepts the Data from UI and the Action Type and decides what is to be done? e.g. LIST_PRODUCTS, ADD_PRODUCTS, etc.
+                - The data accepted by Action Creator is known as Payload
+            - The Action creator must return 
+                - The OUTPUT ACTION based on Input action dispatched from User Interface
+                - The Payload, the data to be updated in Store
+                    - The Number, String, JSON Object, Collection, DateTime, Boolean
+                - e.g. LIST_PRODUCTS may have output actions as LIST_PRODUCTS_SUCCESS or LIST_PRODUCTS_FAILED 
+            - IMPORTANT FOR ACTIONS
+                - Action Creator can have only Synchronous Operartions
+                - Action Creator many initiate the Async operations e.g. AJAX Calls or PROMISES by using 'THE MIDDLEWARE'     
+        - Reducer
+            - A 'Pure Function' that accepts initial State in Store and te Action that is dispatched from UI
+            - This function is responsible to update teh initial State of the store to new state based on teh payload returning by Action Creator
+            - The Redecure will decide how the state is updated.
+            - Reducer must not contains complex logic
+                - e.g. Long runniung operations e.g, Ajax calls
+                - Complex Date Operations
+        - Redux
+            - npm install --save redux
+            - The 'createStore()'
+                - Method that creates a 'Store' i.e. the application state object
+               
+            - The 'combineReducers()' 
+                - Method that that will accepts reducers functions and combine them together to manage the store updates         
+            - The createStore() method accepts a reducer object returned by combinereducers() to create and monitor store
+                - let store =  createStore(reducer);  
+        - React-Redux Combine Object Model
+            - npm install --save read-redux    
+            - The 'Provider' object that is used to load a Parent / Container Component under which all react components are executed
+                - Provider contains a 'store' property. This property will be used to load the Application Store 'the store object from redux' for all components so that they can subscribe to it for read/wrtite operations
+            - connect() method, used to connect 'actions dispatched' from UI  perform read/write operations on 'store' using 'redecurs'
+                - 'mapDispatchToProps', object that reads 'props' of the component and pass these props data to action method to be dispatched so that the store can be updated
+                - 'mapStateToProps', object that is used to read the updated state from store and map these updated values from store to 'props' of the component so that component will show data from 'store' on UI     
+                - Syntax
+                    - connect(mapDispacthToProps, mapStateToProps)(<REACT-COMPONENT-TO-DISPATCH-ACTIONS-AND-TO-BE-UPDATED-FROM-DATA-FROM-STORE>)   
+            - react-redux hooks
+                - useSelector(STATE)
+                    - Subscribe to the Store and Read data from Store to update Component
+                - useDispatch()
+                    - dispach Action From UI
+                - useSelector() and useDispacth() does same thing taht is done by connect() method                       
+
 13. Testing  
 
 
