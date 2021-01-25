@@ -1599,8 +1599,16 @@ export default EmployeeComponent;
                 - useDispatch()
                     - dispach Action From UI
                 - useSelector() and useDispacth() does same thing taht is done by connect() method                
-
- 
+    - Redux Middlewares        
+            - An object model that is used to provide a subscription to an asynchronous operation that is initiated when an action is dispatched.
+            - An object that is used to dispatch actions based on the execution state of the Async operations e.g. Resolve / Reject. BAsed on this action dispatched by the middleware the reducer will update the store.
+            - The middleware will be contineously running at application level
+                - When an action is dispatched, this action will be monitored by 'Middleware' and if it is async action then the execution will be managed by middleware
+            - The middleware has to be configured with the store using createStore() method and its parameter enhancer object 
+                - The 'parameter enhancer object' is used to load additional object to manage the store
+                    - Middleware Object
+                        - Thunk
+                        - Saga (Inductry Standard object model for Async operations in Redux App)  
 
 
 13. Testing  

@@ -16,6 +16,7 @@
   
         // @ts-ignore
         const user = require(path.join(__dirname, './../models/Users'))( sequelize, Sequelize.DataTypes);
+        const dept = require(path.join(__dirname, './../models/Department'))( sequelize, Sequelize.DataTypes);
     
  class UserDal {    
     async createUser(req,resp){
@@ -27,7 +28,6 @@
         };
         console.log(JSON.stringify(newuser));
 
-     
         await sequelize.sync({
                 force: false  
             });
@@ -56,7 +56,51 @@
            return resp.status(404).send({response:`Sorry!! the ${userInfo.UserName} is not found`});
         if(find.Password.trim() !==userInfo.Password.trim())  // unauthorized
             return resp.status(401).send({response:`Sorry!! the password is incorrect`});
+        // else set the session
+        req.session.loggedin= true;
+        req.session.name = userInfo.UserName; 
+        console.log(`The Session Name ${req.session.name}`);
         return resp.status(200).send({response:find});
+    }
+
+    async createDept(req,resp){
+        if(req.session.name === undefined) 
+          return resp.status(401).send({message: 'Please login'});
+        let newdept = {
+             DeptNo: req.body.DeptNo,
+             DeptName: req.body.DeptName,
+             Location: req.body.Location,
+             Capacity: req.body.Capacity
+        };
+      
+     
+        await sequelize.sync({
+                force: false  
+            });
+         
+        
+        const created = await  dept.create(newdept);
+        
+        return resp.status(200).send({response:created});
+    }
+
+    async getdepts(req,resp){
+        if(req.session.name === undefined) 
+          return resp.status(401).send({message: 'Please login'});
+       
+          await sequelize.sync({
+            force: false  
+        });
+        const find  = await dept.findAll();
+        
+           
+        return resp.status(200).send({response:find});
+    }
+
+    async logout(req,resp) {
+        if(req.session.name !== undefined) {
+            req.session.destroy();
+        }
     }
 }
 
