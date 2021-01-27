@@ -1737,8 +1737,14 @@ Create a Functional Component that will be reponsible for performing the followi
 Hands-on lab
 1. create an action 'SELECT_EMPLOYEE', dispatch this action on the onClick() event of the table row in ListEmployeesComponent. The selected, employee must be displayed inside the CreateEmployeeComponent.
 
+Hands-on of the day
+1. Recap the code for Redux-SAGA
+2. Modify the SAGA middleware for PUT and DELETE oeprations
+    time to 03:30 pm
 
-React-Redux Final Hands-on Project
+
+
+React-Redux Final Hands-on Project (To be submitted by Friday Evening)
 1. Create a Single page React Application based on MERN Concept
     - It should use the Redux State management and SAGA middleware to perform CRUD oeprations
         - Note: Define Database and tables of your chioce
