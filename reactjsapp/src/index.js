@@ -5,30 +5,7 @@ import './index.css';
 // importing bootstrap
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-// import App from './App';
-// import the component to be mounted
-// import FirstComponent from './components/firstComponent';
-// import ParentComponent from "./components/propsstate/parentChild";
-// import StateComponent from './components/propsstate/stateComponent';
-// import EmployeeComponent from './components/employeeComponent/employeecomponent';
-// import ProductComponent from './components/griddemoingcomponents/productcomponent';
-// import LfecycleParentComponent from './components/lifecyclemethod/lifecycelcomponent';
-// import ContainerComponent from './components/errorboundries/errorComponent';
-// import ValidationComponent from './components/validationcomponent/validationComponent'
-
-// import DepartmentComponent from './components/deptcomponent/deptcomponent';
-
-// import {BrowserRouter} from 'react-router-dom';
-
-// import MainComponent from './routingapp/maincomponent';
-
-//import MyComponent from './hooks/simpleHookComponent';
-
-// import StateComponent from './hooks/stateComponent';
-
-// import UseEffectAjaxComponent from './hooks/useEffectAjax';
-
-// import ToggleComponent from './hooks/useeffecsdemo/ToggleComponent';
+ 
 
 import UseReducerComponent from './hooks/reducerhook';
 

@@ -1609,6 +1609,23 @@ export default EmployeeComponent;
                     - Middleware Object
                         - Thunk
                         - Saga (Inductry Standard object model for Async operations in Redux App)  
+            - npm install --save saga redux-saga
+                - saga
+                    - Provides an object model for managing the Middleware with the help of generators
+                - redux-saga
+                    - createSagaMiddleware()
+                        - Used to register the SAGA effects(?) for managing async calls dispatched from the React UI for performing async operations     
+                        - SAGA effects
+                            - the list of operators provided using redux-saga/effects to provide generators execution to read the Promise responses
+                -   redux-saga/effects
+                        - call()
+                            - Invoke the method that returs the Resolved promise
+                        - put()
+                            - Returns an output action for the dispatched input action from the react UI. The SAGA mioddleware is responbile to dispatch the output action
+                        - take(), takeLatest()
+                            -  methods to execute the latest action dispatched from React UI by listening to it
+                        - all()
+                            - register all middlewaer Generator functions in the middleware and load these fiuntions at application level to monitor the store along with the reducers.                         
 
 
 13. Testing  
