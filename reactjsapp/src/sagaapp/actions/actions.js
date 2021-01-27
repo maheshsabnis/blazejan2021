@@ -1,5 +1,6 @@
 // read action
 export const getDepartments=()=>{
+    console.log('get departments accesseds');
     return {
         type: 'GET_DEPARTMENTS'
     };

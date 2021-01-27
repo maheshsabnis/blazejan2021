@@ -1626,6 +1626,24 @@ export default EmployeeComponent;
                             -  methods to execute the latest action dispatched from React UI by listening to it
                         - all()
                             - register all middlewaer Generator functions in the middleware and load these fiuntions at application level to monitor the store along with the reducers.                         
+            - applyMiddleware
+                - A function object from react-redux
+                - This object is used to configure a middleware for the store
+                - This will be continesously running at application level to make sure that when an action is dispatched, the reducer will monitor the action and accrodingly the middleware has to process the action and execute it
+                    - Thunk Middleware
+                    - SAGA Middleware                 
+            - compose
+                - A function object from react-redux
+                - the metod that will be used to enhance the 'store' object for using middleware and redux devtools
+                    - let store = createStore(reducer, <Enhancer object created using compose()>)
+            - connect()
+                - A function object from react-redux
+                    - used to connect the redux object model with the components
+                        - redux-hooks are using useSelector() and useDispat() as a alternatibe for connect()
+            - createSagaMiddleware()
+                - A method from redux-saga
+                - create a SAGA middleware instance that contains generator functions with 'all()' method from redux-saga/effects and run it at the application level.
+                - the SAGA instance defined by the  createSagaMiddleware() function will be provided to store so that all components having subscription to store will be listened by the SAGA middleware for dispatched actions       
 
 
 13. Testing  
@@ -1718,6 +1736,19 @@ Create a Functional Component that will be reponsible for performing the followi
 
 Hands-on lab
 1. create an action 'SELECT_EMPLOYEE', dispatch this action on the onClick() event of the table row in ListEmployeesComponent. The selected, employee must be displayed inside the CreateEmployeeComponent.
+
+
+React-Redux Final Hands-on Project
+1. Create a Single page React Application based on MERN Concept
+    - It should use the Redux State management and SAGA middleware to perform CRUD oeprations
+        - Note: Define Database and tables of your chioce
+    - Create Express RES API for CRUD oeprations    
+    - This MUST cover
+        - React Components with Hooks
+        - React-Router-DOM
+        - Redux State Management
+        - SAGA Middleware
+
 
 
 
