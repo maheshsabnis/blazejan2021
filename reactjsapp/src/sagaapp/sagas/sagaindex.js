@@ -45,7 +45,6 @@ function* listenToGetDepartmentsDispatchedAction(){
     yield takeLatest('GET_DEPARTMENTS', fetchDepartmentsGenerator);
 } 
 
-
 // 4. the function for displatching output action for ADD_DEPARTMENT as ADD_DEPARTMENT_SUCCESS
 // action is the parameter that represents the return type from the dispatched action
 function* saveDepartmentSuccess(action){

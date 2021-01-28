@@ -1755,8 +1755,50 @@ React-Redux Final Hands-on Project (To be submitted by Friday Evening)
         - Redux State Management
         - SAGA Middleware
 
+# Appliction Server-Side Security for Node.js Services
+- Linking the Authentication to the Sessions 
+    - express-session
+        - npm install --save express session
+            - The 'session' object as a middleware to Express instance
+            - Properties of session
+                - secret
+                    - Session Secret key used by the server to provide the session identification for a login user
+                    - signeture for session id
+                - genid:function(){}
+                    - contains logic for generating session id
+                - store
+                    - a physical store where the session info is saved
+                        - Default is server's memory aka metabase
+                        - Use MySql Table, MongoDB, etc.       
+                - resave
+                    - Force the session to save data in store
+                    - default as true
+                    - this will be used to verify the session before sending the response
+                - cookie
+                    - configuration fpor storing the session info on the client's machine in physical file
+                        - this file will be exchanges per rqeust from browser to web server and web servier will vertify the session based on info from cookie file 
+                        - maxage
+                            - the maximum time for which the session is live on the server.
+                            - if maxage is 20 mins and user once created a session has not send in request in 20 mins then the server will terminate / close  / destroy the session
+                - saveUninitialized
+                    - used to store uninitialized session aka anonymous on the store forecefully
+                        - set this to false to make sure that the login / authentication is done by web server for providing application access                 
 
-
+- Token Based Authentication using JSON Web Tokens (JWT)
+    - Three (3) sesions
+        - Headers
+            - The Unique encrypted key for token integrity
+            - Server will verify the integrity of the header to validate the taoken and decide to accept the request
+                -  the Algorithm for encryption is used to the header encryption to secure all the token and hence manage the identity
+        - Payload
+            - the User must login successfully on the app to generate the claim information
+            - Contains the Authenticated user claims
+                - UserName
+                - UserName + Password
+                - Role Name of the user
+        - Signeture
+            - The secret that is used to sign the token based on which the server will verify the claim and provide access of the application
+npm install --save jsonwebtoken
 
 
 
