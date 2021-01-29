@@ -1800,6 +1800,134 @@ React-Redux Final Hands-on Project (To be submitted by Friday Evening)
             - The secret that is used to sign the token based on which the server will verify the claim and provide access of the application
 npm install --save jsonwebtoken
 
+# Microservices
+
+- Need of Microservice for the application
+    - CI / CT / CD pipeline
+        - Contineouse Integration (CI)
+            - the application needs frequent updates as per customer's needs
+            - these update may required the change in logic
+            - thes new logic MUST be integrated with existing app
+        - Contineous Testing (CT)
+            - The change in code must be test with Unit Testing by developer
+            - Run the Integration testing
+                - The change in the existing logic or addition of new logic must be correctly tested whrn integrated with extsing app aka End-to-End Testing
+        - Contineous Delivery (CD)
+            - The app is delivered
+                - Build
+                - Release      
+- Plan for the server-side archirecture updates / define new archirecture from scratch
+    - Plan for workflow isolations
+        - e-Comm
+            - Product Updload and Inventory Management is a process
+                - Vendor management , Vendor Service
+                    - Vendor Registration
+                    - Product Categories
+                    - Upload Products
+                    - Get Product Updates
+                    - Retire Product
+                - Store Management for Product Inventory , Store Service    
+            - Customer Management , Customer Service
+                - Registration of Customer
+                - Product Serarch
+            - Order Mangament , Order Serveice
+                - Custom Select Product
+                - Order is placed
+                - Order is Received
+                - Payment is done
+                - Cancel Order
+            - Order Dispatch, Dispatch Service
+                - Destribute the order to the nearest vendor
+                - Track order
+                - Transhipment of Order
+                - Order Delivery
+                - Return material     
+- Infrastructure  requirements for the applciation
+    - Deployment requirements w.r.t. Software
+        - Node.js , Express, JsonwebToken, bodyparser, cors, sequelize, mysql2, ect.
+        - React.js, redux, saga, bootstrap
+        - Windows, Linux, Solaris, macOS
+        - MySQL, SQL Server, NoSQL
+    - Deployment requrements w.r.t. Hardware
+        - CPU
+        - Memeory /  RAM
+        - Storage
+        - Networking    
+    - Thnink of reusable Virtual Machines
+        - A file that contains OS, Application Server, Application
+        - Face the VM Handling Limitations
+            - 10 GB +
+            - 15 GB +
+        - File Size
+            - OS with UI + Kernel Services + Platform Services + Application Server + Application + Application Data     
+    - Think of Docker Images
+        - It is a file that contains basic OS services, application server images, application   
+            - Provide an Auto-Configuration of the Application dependencies and manage thes on a single compressed image     
+# Start Working on the Microservices
+
+- Create a Docker Image of the application
+    - Choose the standard image(s) for the application
+    - Deploy the application on image
+    - Test the image on premises
+    - push the image on Repository
+        - Docker Hub (Default)
+        - Private repository e.g. Git Hub
+        - Cloud Repository
+            - AWS Amazon Elastic Container Registry (ECR)
+            - Azure, Azure Container registry (ACR)
+    - Distribute the image to client
+        - PULL Image from the Registry          
+
+- Create a 'Dockerfile'
+    - The file for configuring the Image creation steps
+        - PULL all standard images from REPOSITORY for the currentn application
+        - Select the Docker Base Image for the application
+            - Windows / Linux (recommended)   
+        - Select the volume (or directory) where the app will mounted
+        - Copy files from the application path to the docker image 
+        - Build the application inside the image
+        - Run the application from the iamge      
+- Use Docker CLI to build, run, images from local machine
+    -  push, pull to and from the repository
+
+- Docker Commands
+    - Login on the Docker Hub
+        - docker login
+            - Enter User Name of Docker HUB i.e. https://hub.docker.com
+            - Enter Password
+    - List of Images
+        - docker images
+            - Will show List of Images
+            - Each Images has
+                - Image ID, Creatd,Size, tag
+                    - The 'tag' is used to identify the image on the repository
+    - List of Containers
+        - A Container is a logical unit that hosts, run the image 
+            - docker ps      
+                - Containe ID
+                - Images ID
+                - Status of Container
+        - List of containers currently running
+            - docker ps -a
+    - Stopping Container
+        - docker stop <CONTAIMER-ID> / <CONTAINER-NAME>
+    - Removing the container aka deleting the container
+        - docker rm  <CONTAIMER-ID> / <CONTAINER-NAME>
+            - NOTE: The container must be stopped before removing   
+        - docker rm cont1 cont2......              
+    - Removing image aka deleting image
+        - docker rmi <IMAGE-ID> / <IMAGE-NAME>
+            - NOTE: The container must be deleted before deleting image contained inside the container
+        - docker rmi img1 igm2......
+    - Create an image aka build the image
+        - docker build . -t <IMAGE-NAME>:<TAG>
+            - The '.' means the curent path on which the 'Dockerfile' is present
+            - -t is the switch for tagging the image (Recommended while building image)
+        - TAG the exisitng image with new tag
+            - docker tag <IMAGE>:<ORIGINAL-TAG> <IMAGE>:<NEW-TAG>
+   - Running the image locally from a port exposed by container and map to the port of local machine
+        - docker run -p <LOCAL-MACHINE-PORT>:<PORT-FROM-CONTAINER> <IMAGE>:<TAG>         
+            - generally the PORT-FROM-CONTAINER is 80            
 
 
 
