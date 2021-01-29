@@ -1982,3 +1982,54 @@ Exercise Microservice
 1. Create separate REST APIs those are doing CRUD operations on MySQL instnace on AWS RDS
 2. Dockerize each REST API in separate docker image
 3. Use Docker-compose to deploye and run both the microservices at a time inside the docker env.
+4. CReate a RabbitMQ subscription in the Microservices and communicate data across them
+    - e.g. The EMployee will be creaetd in the department if the department exists and the Capacity of the department is not full
+
+# Using EMS for Microservices for Publish/Subscribe mechanisms
+App
+- Identify the EMS Provider and the technology that provides EMS Infrstructure for the app
+- Integrate it with app
+    - Confoigure EMS Server (Recommended)
+        - This server will publish endpoints for 
+            - Sender Application to Publish data
+            - Receiber Applciation to receive data
+- Rabbit MQ
+    - Free, Open source and widely used Messaging Software across technologies
+        - Nodejs
+        - JAVA
+        - .NET
+        - .NET Core
+    - Message Queue
+        - The Platform that is used to store data send by sender (publisher) and data will be stored unliess it is not received by receiver (Consumer / Subscriber)
+    - Message Exchange
+        - Link data across Publisher / Subscribers using Queues 
+- Download and install RabbitMQ
+- Use the Docker Image
+    -  docker run -d --hostname my-rabbitap --name emessage-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+        - -d --hostname my-rabbitap 
+            - run the image is exist on host else download it
+        -  --name emessage-rabbit
+            - The image name
+        -  -p 15672:15672
+            - RabbitMQ Reserved Port for Admin COntrol Panel
+            - Default User and Passowd is
+                - User NAme: guest
+                - Password: guest
+        -   -p 5672:5672
+            - Port mapping for Communciation across apps using RabbitMQ
+        -   rabbitmq:3-management
+            - The Container           
+    - The Protocol for Communication
+        - amqp
+    - The Rabbit MQ Port on the server for Admin Control Panel is 15672
+    - The Port for Communication is 5672
+    - amqp://<SERVER>:15672/<QUEUE-NAME>
+   - Node.js RabbitMQ package
+    - amqplib
+        - The Protocol object model 
+        - Objects and Methods for Messaging
+    - amqplib-rabbitmq      
+        - The Object model for confguring RabbitMQ doe Data Communication in Node.js application
+    - @types/amqplib
+        - Intellisense    
+                
