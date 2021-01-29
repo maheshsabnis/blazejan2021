@@ -1976,3 +1976,9 @@ docker pull mast007/nodedockerapp:prod
             - IPs
             - Network
         - close all connections          
+
+
+Exercise Microservice
+1. Create separate REST APIs those are doing CRUD operations on MySQL instnace on AWS RDS
+2. Dockerize each REST API in separate docker image
+3. Use Docker-compose to deploye and run both the microservices at a time inside the docker env.
