@@ -1887,6 +1887,13 @@ npm install --save jsonwebtoken
         - Copy files from the application path to the docker image 
         - Build the application inside the image
         - Run the application from the iamge      
+            - generally use 'npm' command e.g. npm start or npm run start
+            - The 'npm' will accept the application on current path as 'Node package'
+            - The 'npm' will look for 'package.json' file on the current path
+            - If found then will look for 'scripts' section from package.json and if the 'start' key is nused in scripts section it will run the file passed as value to 'start' key
+                - if "start": "node server.js" then npm run start or npm start command will run the server.js inside node    
+- Create a .dockerignore file
+    - This file will contain path or paths those are not added in docker image         
 - Use Docker CLI to build, run, images from local machine
     -  push, pull to and from the repository
 
@@ -1928,6 +1935,44 @@ npm install --save jsonwebtoken
    - Running the image locally from a port exposed by container and map to the port of local machine
         - docker run -p <LOCAL-MACHINE-PORT>:<PORT-FROM-CONTAINER> <IMAGE>:<TAG>         
             - generally the PORT-FROM-CONTAINER is 80            
+- While pushing if the following error is encountered
+    - docker push nodedockerapp:prod   
+        - denied: requested access to the resource is denied
+    - then tag the image as followes
+        - docker tag <IMAGE>:<TAG> <REPOSITORY-ON-HUB>/<IMAGE>:<TAG>   
+        - e.g.
+            - docker tag nodedockerapp:0.0.1 mast007/nodedockerapp:prod
+
+- pulling image from docker hub
+
+docker pull <IMAGE>:<TAG>
+docker pull mast007/nodeadddocker:prod
+
+docker pull mast007/nodedockerapp:prod
 
 
+# Microservices handling using Docker-Compose
 
+- Docker-Compose, is the configuration for managing microservices with multiple services along with their dependencies and the netwoking across them
+- The docker-compose.yml file is a deployment and dependency configuration file for Microservices
+    - services (mandatory)
+        - the individual Microservices created using docker images and exposing port
+        - these Microservices may be having the depednencies like
+            - database image (only for testing)
+            - EMS image (can be considered for production)
+    - networking confguration (optional)
+        -  COnfigure the networking across the microservices and their dependencies if any       
+- Run all microservices with their dependencies using docker-compose
+    - docker-compose up
+        - build all images by pulling it from Repositores (HUBS)
+        - build the images by configuring all its dependencies
+        - establish network resources
+        - configuring IPs
+        - running containers by hosting image in it
+        - exposting poprs from containsers for accessing publically
+    - docker-compose down
+        - command to undload containsers
+        - release respurces
+            - IPs
+            - Network
+        - close all connections          

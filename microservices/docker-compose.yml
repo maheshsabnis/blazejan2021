@@ -1,0 +1,13 @@
+version: "3.9"
+
+# define service
+
+services: # list of Microservices
+ deptservice: # name of the service
+   build: serv1 # the folder that contains dockerfile 
+   ports: # ports mapping Host-port:port-from-container
+     - "9001:9001"
+ empservice:
+   build: serv2
+   ports:
+     - "9002:9002"
