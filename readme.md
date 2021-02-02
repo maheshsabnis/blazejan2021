@@ -1647,6 +1647,130 @@ export default EmployeeComponent;
 
 
 13. Testing  
+    - Understand the UI Requirement
+    - Plan for HTML eleemnts or external components
+    - Plan for the data
+        - received from external serveice calls
+    - Decide the UI egeneration strategy
+        - Dynamic tables
+        - Lists
+        - Select
+    - If the data is not avaialble then plan for fallback UI        
+    - Define individual Tasks for each requirement , Test-Driven-Development (TDD)
+        - Each Task can be further devided into sub-tasks
+        - Plan for Development
+            - Create a Raw  design
+            - Validate it
+                - if not validated redesign it based on update
+                - comtinue redesign till not accepted
+            - start coding
+                - Test the code and validate it
+                - Keep modifying code till it is not tested successfully as per the needs
+    - JavaScript FullStack App Testing
+        - Code Testing for logic
+            - JavaScript  Testing for Logic
+                - Test code only for its correct execution
+            - JavaScript Server-Side Code Testing aka Node.js Application Testing
+                - Test code for Services, HTTP Calls, Files, etc.       
+        - UI Testing for Rendring        
+            - UI is generated dynamically based on data / events
+            - Test code for DOM Generation
+                - Test Each DOM element separately with its parent as well as child updates 
+    - TDD
+        - Use Case aka User Story (DevOps)
+            - User Log-In to the Application
+                - Accept User Name and Password
+                    - UserName Validation Rules
+                        - No Empty, greater than 10 characters, must be email
+                    - Password Validation Rules  
+                        - No EMpty, Strong Pasword 
+        - Test Case        
+            - Log-In Test
+                - Accept User Name and Password
+                    - Test Conditions
+                        - UserName must not be empty
+                        - Length must not be less than 10 charactes
+                        - Expression must be Email   
+    - React.js Testing Object Model 
+        - jest
+            - JSDOM used to test the React Apps (and hence JavaScript app) without browser
+        - enzyme
+            - The Object model that loads the test on dynamically generated DOM in memory on the server (Node.js server)
+        - npm install enzyme enzyme-adapter-react-16
+        - Add enzyme.js file
+            - The configuration file for linking the Test with React   
+        - Writing the testb with Jest API
+            - use the 'describe()' object
+                - this is the object that contains the 'Test Suit'  
+                    - Means contains multiple tests inside it
+            - use the 'it()' object
+                - the Test Case for Unit Testing
+                    - Contains followijg
+                        - 1. Arrange
+                            - the arrangement of Test dependencies e.g. Test Data, instances of the classes of which methods are used in urrent unit test, etc.
+                            - definition of expected result
+                        - 2. Act
+                            - Actully call method that is to be tested
+                            - This method may use the test data
+                            - This will return the actual value    
+                        - 3. Assert
+                            - Compare the Actual value with the expected value to eveluate the test.
+                                - Success / Fail      
+            - test naming conventions
+                - If the Component FIle is myComponent.js then the test file will be
+                    - myComponent.test.js OR myComponent.spec.js                 
+            - to run test use the following command (if using React CLI i.e. create-react-app)
+                - npm run test                                             
+14. React Boundries
+    - No support for Single Page App out of the box
+        - react-router-dom
+    - No default feature for Server-Side Rendering
+        - create-react-app with React CLI
+            - react-scripts
+    - Next.js
+        - React Framework for the Production
+            - ~17 gb
+        - Server-Side Rendering
+            - Technique for modern web apps that involves the executing scripts on web serer that produces the customized response for each user's request to web site.   
+        - Generating Static Web Sites     
+        - npx create-next-app
+            - this will ask for the project name and then download all depednencies      
+        - Project Structure
+            - The 'pages' folder for Static Generation of Web Pages and Server-side rendering
+                - The 'api' subfolder for all server-side APIs, node.js + express.js
+                - The '_app.js'
+                    - Provider the navigation across all components using routing on server-side
+                        - <Component {...pageProps} />
+                            - Component is the standard container for navigation across all pages in the application inside the 'pages' folder  
+                _ The 'index.js'
+                    - The custom component code
+            - The 'public' folder for static files serving. This is mapped with './' root     
+            - The 'styles' for all CSS files  
+        - Working with Next.js
+            - Create React components (Calss or functional)
+                - Have Access to Lifecycle Hooks for Class Components
+                - Have access to the React FUnctional Component's hooks
+                    - useState(), useEffect(), useContext(), etc.
+                - Redux State Management    
+            - Link these components with Next app using
+                - next/link
+                    - Provides the Single Page Navigation across components
+                    - The 'Link' component to execute router navigation
+                - next/router
+                    - Provides 'useRouter' hook to manage the Routing  
+                        - the 'query' object
+                            - Used to subscribe to the QueryString Parameters for file based navigation to the component
+                            - const router = useRouter()
+                            - const {param} = router.query;
+                                = param is the object that contains Key/Value pairs of the QueryString in the URL  
+            - The Next.js Server-Side Lifecycle methods for Server-Side Rendering
+                - getStaticProps()
+                    - Manages Pre-rdenring on Server-Side
+                    - Manages Server-Side AJAX Calls to receive data by using 'async' calls        
+                        - Let Pre-Rendering to Execute with default Props/State etc.
+                        - Execute Ajax call (if-any)
+                        - Update props with data from AJAX call
+                        - bind the prop to DOM and render it back to client
 
 
 
@@ -1986,7 +2110,7 @@ Exercise Microservice
     - e.g. The EMployee will be creaetd in the department if the department exists and the Capacity of the department is not full
 
 # Using EMS for Microservices for Publish/Subscribe mechanisms
-
+App
 - Identify the EMS Provider and the technology that provides EMS Infrstructure for the app
 - Integrate it with app
     - Confoigure EMS Server (Recommended)
@@ -2032,4 +2156,24 @@ Exercise Microservice
         - The Object model for confguring RabbitMQ doe Data Communication in Node.js application
     - @types/amqplib
         - Intellisense    
-                
+
+# Module Loaders
+1. CommonJS
+    - Defauly used by JavaScript for loading modules scattered across multiple JS File
+2. SystemJS
+    - Create a sysstem.config.js file to define paths for all .js files and logically creates group of it and load it in browser
+3. require.js
+    - Asynchronous Module Loaders (AMD)
+    - Loads the modules scattered across multiple JS files and load it in ramdon async orders
+    - USe it in Node.js
+4. WebPack
+    - Modern App module loaders
+        - Loads Modules scattered across multiple JS files, merge them, minify them and load them   
+
+Hands-on-lab
+- Write a teston DropDownComponent component that generates the <option> elements having the value that matches with an element presenet in array passed as DataSource to the component.
+    - e.g. If Array is ['IT', 'HRD', 'ACCTS']
+        - then make sure that the option contains value as the entry from the array
+- Write a test to makes sure that the EmployeeComponent contains the <DropDownComponent> in it
+    - Hint: Use 'find()' method to seacrh the element                
+
