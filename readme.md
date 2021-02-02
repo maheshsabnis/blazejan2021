@@ -1986,7 +1986,7 @@ Exercise Microservice
     - e.g. The EMployee will be creaetd in the department if the department exists and the Capacity of the department is not full
 
 # Using EMS for Microservices for Publish/Subscribe mechanisms
-App
+
 - Identify the EMS Provider and the technology that provides EMS Infrstructure for the app
 - Integrate it with app
     - Confoigure EMS Server (Recommended)
